@@ -1,0 +1,12 @@
+[DEFAULT]
+default-user = liberatemarketing
+
+[liberatemarketing]
+token = f6780e5cb5f07106976e3c0f851f177ffd23ddb457736ed1cc0c24d76946920e
+region = us-east
+mysql_engine = mysql/8.0.30
+authorized_users = liberatemarketing
+plugin-obj-access-key = B191W1R8DIPRIQ74333D
+plugin-obj-secret-key = SZA5guDaa7u3Xg72OODfEKYY6uvEwOUiSiMvnTHc
+plugin-obj-cluster = us-east-1
+
