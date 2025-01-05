@@ -131,10 +131,67 @@
 		<Setting name="Remote filelist sortorder">0 1</Setting>
 		<Setting name="Last automatic update version">3.62.2</Setting>
 		<Setting name="Splitter positions (v2)">98 -145 500000000 244 244 500000000</Setting>
-		<Setting name="Sitemanager last selected">0/New folder/New site 3</Setting>
-		<Setting name="Last automatic update check">2023-11-01 15:55:04</Setting>
-		<Setting name="Update Check New Version" platform="mac">nightly 2023-11-01 https://filezilla-project.org/nightlies/2023-11-01/x86_64-apple-darwin18.2.0/FileZilla3.app.tar.bz2 15150862 sha512 fda1de33d79f666011d8896011079b3226cdaf4d015dc0e31e902f5d2a6775c05da22c7d9d65595b5585b9fda5cdc4c11304ddbb1dfed86195b4926cadd721d4 sig:cF0/CO+k4sQHtY78h+Cuc8xofxauiLkZBY4V8sSR18yx3xNkzG6HxrRzhdR0tAeytpB13C7Zvd70b1nXyHzFDQ
-release 3.64.0 https://dl2.cdn.filezilla-project.org/FileZilla_3.64.0_macosx-x86.app.tar.bz2 15289763 sha512 ff67a95345fa4c20563a58272ce61e1ce9b8db8c5a1d1ae24ea65c17ff5bcbd9552ebea182b06313bfd03c7a9510353999deff7b0128ea009b44c3d118516443 sig:C5uWxE6OT8UIB1g8jDrkMH+HS1fYPpsGfzUX4fKOMJ69RSlVMfYMxU7DOqAagBLyjedFUxefoAHjeyxlKmMVCQ
+		<Setting name="Sitemanager last selected">0/New folder/Dermalife 3</Setting>
+		<Setting name="Site Manager position">0 -2350 131 1076 446 </Setting>
+		<Setting name="Last automatic update check">2024-07-02 13:43:10</Setting>
+		<Setting name="Update Check New Version" platform="mac">nightly 2024-07-02 https://filezilla-project.org/nightlies/2024-07-02/x86_64-apple-darwin18.2.0/FileZilla3.app.tar.bz2 15433799 sha512 82aa1c0c63aefd96d8f08e128b5480d8ab3686cbd3814548b410cf9fd26a73a803bc608c508aca01c27d88c2124ade081956f1752fd9e1c5338abe333f11957e sig:LewWts4BOkpbrxs2zL+rvHex60KRrNnMh2ZQN9gSalZDBeZTeE/+mp4zab4i9eLdmA8Bex9TWGQorszx7jKhAA
+release 3.67.0 https://dl4.cdn.filezilla-project.org/FileZilla_3.67.0_macos-x86.app.tar.bz2 15419033 sha512 b6f0df90664cc483c26fba0382ebe573d25d92a551214fc11e29a0395f1262ce2569c335e720a484ee862a9b81b3a24ed3f2a00f4348ccd6c8fc6988635029d8 sig:HAO2/83c5Y5hENDCTkLNaA7h143xXJKz0a/0m1G3rnDCiazZvwdIMh3tkrqV57JF/usRD37weIoMlevgBZwUBg
+beta 3.67.1-rc1 https://dl4.cdn.filezilla-project.org/FileZilla_3.67.1-rc1_macos-x86.app.tar.bz2 15435212 sha512 98f789a8257ea93605528c20a3e1d239fe2a62be44ec7eb71c442e33a666916f9fc31801c681f2f78d2449f0db0a01f21738803f365444c96ab3383b5e693a9d sig:NwZqZrqlyt7dUUzabOJURyqIlNLJKC+TJLQnM8wYaGfP7yPq1RmTRylziDNgBOIaHAyqd6NSr1yD3uGJHG/dBQ
+
+3.67.1-rc1 (2024-06-27)
+
+- Fixed an issue migrating old queue files if several older versions have been skipped
+- Updated to libfilezilla 0.48.0
+
+3.67.0 (2024-04-15)
+
+! SFTP: Fixed PuTTY ECDSA NIST P-521 private key recovery vulnerability (CVE-2024-31497). If you use NIST P-521 keys to connect to SSH/SFTP servers, you should regenerate them and revoke the previous ones.
+! Official binaries are now built against GnuTLS 3.8.4
+- Updated to libfilezilla 0.47.0
+
+3.66.5 (2024-02-07)
+
+! Official binaries are now built againt GnuTLS 3.8.3
+- Updated to libfilezilla 0.46.0
+- MSW: Fixed tab navigation over message log
+
+3.66.4 (2023-12-20)
+
+! SFTP: Address Terrapin protocol vulnerability
+
+3.66.3-rc1 (2023-12-11)
+
+- Test release for macOS CPU architecture migration
+
+3.66.3-beta1 (2023-12-07)
+
++ macOS: Now also distributing aarch64 binaries
+- macOS: Fixes for language detection
+- Fixed a potential crash in the HTTP client
+
+3.66.1 (2023-11-03)
+
+- macOS: Fixed display of local filenames containing non-ASCII characters if LC_CTYPE wasn't set
+
+3.66.0 (2023-10-23)
+
+- Fixed a sorting issue in comparative search
+
+3.66.0-rc1 (2023-10-11)
+
+- Fixed crash removing items from the list of file extensions treated as text files
+- Fixed potental crash if shutting down HTTP client.
+- Fixed HTTP timeouts
+
+3.65.0 (2023-07-10)
+
++ Comparative search can now also be used if sorted by path
+- Fixed an issue in comparative search in directories with uppercase letters
+
+3.65.0-rc1 (2023-06-30)
+
+- Fixed potential crashes
+- Updated to libfilezilla 0.44.0
 
 3.64.0 (2023-04-26)
 
@@ -167,25 +224,23 @@ release 3.64.0 https://dl2.cdn.filezilla-project.org/FileZilla_3.64.0_macosx-x86
 - macOS: Fixed tree control scroll position not following the foucsed item
 - macOS: Fixed an issue preventing translations into some languages to be loaded
 </Setting>
-		<Setting name="Site Manager position">0 146 268 1076 446 </Setting>
-		<Setting name="Window position and size">0 31 100 1292 781 </Setting>
+		<Setting name="Window position and size">0 -2459 -69 1292 781 </Setting>
 		<Setting name="Tab data" sensitive="1">
 			<Tabs>
-				<Tab selected="1">
-					<Host>160.153.71.70</Host>
+				<Tab connected="1" selected="1">
+					<Host>74.207.224.117</Host>
 					<Port>21</Port>
 					<Protocol>0</Protocol>
 					<Type>0</Type>
-					<User>SDB@zimacom.services</User>
-					<Pass encoding="base64">QWRtaW5AMTIz</Pass>
+					<User>cesar</User>
+					<Pass encoding="base64">IVBuMDc2OG1v</Pass>
 					<Logontype>1</Logontype>
 					<PasvMode>MODE_DEFAULT</PasvMode>
 					<EncodingType>Auto</EncodingType>
 					<BypassProxy>0</BypassProxy>
-					<Name>New site 3</Name>
-					<Site>0/New folder/New site 3</Site>
-					<RemotePath>1 0 2 js</RemotePath>
-					<LocalPath>/Users/juandavidduquea/Nextcloud2/Diamond's Bucket/</LocalPath>
+					<Site></Site>
+					<RemotePath>1 0</RemotePath>
+					<LocalPath>/Users/juandavidduquea/</LocalPath>
 				</Tab>
 			</Tabs>
 		</Setting>
