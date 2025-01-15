@@ -1,0 +1,75 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = false
+
+# Replace the '❯' symbol in the prompt with '➜'
+[character] # The name of the module we are configuring is 'character'
+success_symbol = '[➜](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+error_symbol = '[✗](bold red) '
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = false
+
+# ~/.config/starship.toml
+
+[battery]
+full_symbol = '🔋 '
+charging_symbol = '⚡️ '
+discharging_symbol = '💀 '
+
+[[battery.display]]
+threshold = 30
+style = 'bold red'
+
+
+# ~/.config/starship.toml
+
+# Shows the current username
+[env_var.USER]
+format = '[$env_value](bold white) '
+variable = "USER"
+disabled = true
+
+
+# Shows the hostname
+[hostname]
+ssh_only = false
+format = "[$hostname](bold yellow) "
+disabled = true
+
+# Shows current directory
+[directory]
+truncation_length = 8
+truncation_symbol = "…/"
+home_symbol = " ~"
+read_only_style = "197"
+read_only = "  "
+format = "at [$path]($style)[$read_only]($read_only_style) "
+
+[localip]
+ssh_only = true
+format = '@[$localipv4](bold red) '
+disabled = false
+
+
+[conda]
+ignore_base = true
+symbol = "🅒 "
+
+# disabled = false
+# General
+#[general]
+#command_timeout = 10
+
+[os]
+format = "on [$symbol]($style)"
+style = "bold white"
+disabled = false
+
+[os.symbols]
+Macos = " "
+Linux = " "
+Windows = " "

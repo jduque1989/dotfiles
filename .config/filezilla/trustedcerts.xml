@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<FileZilla3 version="3.62.2" platform="mac">
+	<FtpSessionResumption>
+		<Entry Host="usm106.siteground.biz" Port="21">true</Entry>
+		<Entry Host="giowm1076.siteground.biz" Port="21">true</Entry>
+		<Entry Host="ftp.impactandomillones.com" Port="21">true</Entry>
+		<Entry Host="c115164.sgvps.net" Port="21">true</Entry>
+		<Entry Host="ftp.dermalife.co" Port="21">true</Entry>
+		<Entry Host="160.153.71.70" Port="21">true</Entry>
+		<Entry Host="74.207.224.117" Port="21">true</Entry>
+	</FtpSessionResumption>
+	<TrustedCerts />
+</FileZilla3>
