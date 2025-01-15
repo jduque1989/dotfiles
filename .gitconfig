@@ -1,0 +1,48 @@
+[user]
+	name = jduque1989
+	email = 67889006+jduque1989@users.noreply.github.com
+[core]
+	autocrlf = input
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[alias]
+  cm = commit -m
+  st = status
+  br = branch
+  co = checkout
+  cp = cherry-pick
+  df = diff
+  lg = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%an%d%Creset %s %Cgreen(%cr)%Creset' --date=relative
+  cl = log --graph --pretty=format:'%h%d %s (%an)'
+  lo = log --oneline
+  authors = log --pretty=format:'%an <%ae>'
+  dif = diff
+  di = diff
+  dff = diff
+[branch.master]
+  mergeoptions = log
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+[difftool]
+  prompt = false
+[diff]
+  tool = vimdiff
+[merge]
+  tool = vimdiff
