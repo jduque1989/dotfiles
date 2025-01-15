@@ -23,8 +23,11 @@ alias lv="lvim"
 alias ..="cd .."
 alias h="cd ~/"
 alias du="du -sh *"
-alias ls="exa"
-alias ll="exa -la"
+alias ls='lsd'
+alias ll='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
 
  # Set FZF default options
 alias fcd='cd "$(find . -type d | fzf)"'
