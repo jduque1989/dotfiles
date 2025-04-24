@@ -3,7 +3,6 @@
 -- Year: 2025
 -- Version: V1
 require 'core.options'
-require 'core.keymaps'
 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -29,9 +28,16 @@ require('lazy').setup {
   require 'plugins.dashboard',
   require 'plugins.indent-blankline',
   require 'plugins.misc',
-  require 'plugins.avante',
-  require 'plugins.codeium',
-  require 'plugins.nvim-dap',
-  require 'plugins.obsidian',
+  -- require 'plugins.avante',
+  -- require 'plugins.codeium',
+  -- require 'plugins.nvim-dap',
+  -- require 'plugins.obsidian',
   -- require 'plugins.harpoon',
 }
+vim.defer_fn(function()
+  require 'plugins.avante'
+  require 'plugins.codeium'
+  require 'plugins.nvim-dap'
+  require 'plugins.obsidian'
+  require 'core.keymaps'
+end, 20)
