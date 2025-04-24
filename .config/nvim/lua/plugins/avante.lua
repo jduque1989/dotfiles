@@ -46,4 +46,8 @@ return {
       ft = { 'markdown', 'Avante' },
     },
   },
+  {
+    'tweekmonster/startuptime.vim',
+    cmd = 'StartupTime',
+  },
 }
