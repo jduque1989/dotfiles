@@ -78,3 +78,5 @@ vim.keymap.set('n', '<leader>;', vim.diagnostic.setloclist, { desc = 'Open diagn
 vim.keymap.set({ 'n', 'x' }, '<leader>fs', function()
   require('rip-substitute').sub()
 end, { desc = ' rip substitute' })
+
+vim.keymap.set('n', '<leader>aa', '<cmd>AvanteAsk<CR>', { desc = 'Avante Ask' })

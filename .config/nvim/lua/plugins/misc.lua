@@ -106,6 +106,17 @@ return {
     end,
   },
   {
+    'rcarriga/nvim-notify',
+    lazy = false,
+    config = function()
+      local notify = require 'notify'
+      notify.setup {
+        background_colour = '#000000',
+      }
+      vim.notify = notify -- 🔥 línea crítica
+    end,
+  },
+  {
     'folke/noice.nvim',
     config = function()
       require('noice').setup {
@@ -130,7 +141,6 @@ return {
     dependencies = {
       -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
       'MunifTanjim/nui.nvim',
-      'rcarriga/nvim-notify',
     },
   },
   {

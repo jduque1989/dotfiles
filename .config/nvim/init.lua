@@ -16,6 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup {
   require 'plugins.colortheme',
+  require 'plugins.misc',
   require 'plugins.neotree',
   require 'plugins.bufferline',
   require 'plugins.lualine',
@@ -27,16 +28,10 @@ require('lazy').setup {
   require 'plugins.gitsigns',
   require 'plugins.dashboard',
   require 'plugins.indent-blankline',
-  require 'plugins.misc',
-  -- require 'plugins.avante',
-  -- require 'plugins.codeium',
-  -- require 'plugins.nvim-dap',
-  -- require 'plugins.obsidian',
-  -- require 'plugins.harpoon',
+  require 'plugins.avante',
+  require 'plugins.codeium',
 }
 vim.defer_fn(function()
-  require 'plugins.avante'
-  require 'plugins.codeium'
   require 'plugins.nvim-dap'
   require 'plugins.obsidian'
   require 'core.keymaps'
