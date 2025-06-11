@@ -24,3 +24,4 @@ if command -v zsh &>/dev/null; then
 fi
 
 echo "✅ Dotfiles setup complete!"
+sleep 10
