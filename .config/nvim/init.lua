@@ -31,6 +31,15 @@ require('lazy').setup {
   require 'plugins.avante',
   require 'plugins.codeium',
 }
+
+vim.diagnostic.config {
+  virtual_text = true,
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+  severity_sort = true,
+}
+
 vim.defer_fn(function()
   require 'plugins.nvim-dap'
   require 'plugins.obsidian'

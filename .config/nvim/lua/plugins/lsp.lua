@@ -1,3 +1,5 @@
+local unpack = table.unpack or unpack
+
 return {
   -- Main LSP Configuration
   'neovim/nvim-lspconfig',
@@ -14,12 +16,12 @@ return {
     -- Allows extra capabilities provided by nvim-cmp
     'hrsh7th/cmp-nvim-lsp',
     dependencies = {
-        'hrsh7th/cmp-nvim-lsp', -- LSP source for nvim-cmp
-        'hrsh7th/cmp-buffer', -- Buffer completions
-        'hrsh7th/cmp-path', -- Path completions
-        'hrsh7th/cmp-cmdline', -- Command-line completions
-        'L3MON4D3/LuaSnip', -- Snippet engine
-        'saadparwaiz1/cmp_luasnip', -- Snippet completions
+      'hrsh7th/cmp-nvim-lsp', -- LSP source for nvim-cmp
+      'hrsh7th/cmp-buffer', -- Buffer completions
+      'hrsh7th/cmp-path', -- Path completions
+      'hrsh7th/cmp-cmdline', -- Command-line completions
+      'L3MON4D3/LuaSnip', -- Snippet engine
+      'saadparwaiz1/cmp_luasnip', -- Snippet completions
     },
   },
   config = function()
@@ -149,7 +151,7 @@ return {
     --  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
-    local lspconfig = require('lspconfig')
+    local lspconfig = require 'lspconfig'
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
     -- Enable the following language servers
@@ -232,7 +234,17 @@ return {
     --
     --  You can press `g?` for help in this menu.
     require('mason').setup()
-
+    require('lspconfig').pylsp.setup {
+      settings = {
+        pylsp = {
+          plugins = {
+            pycodestyle = {
+              maxLineLength = 125,
+            },
+          },
+        },
+      },
+    }
     -- You can add other tools here that you want Mason to install
     -- for you, so that they are available from within Neovim.
     local ensure_installed = vim.tbl_keys(servers or {})
