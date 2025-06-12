@@ -30,6 +30,7 @@ require('lazy').setup {
   require 'plugins.indent-blankline',
   require 'plugins.avante',
   require 'plugins.codeium',
+  require 'plugins.neogit',
 }
 
 vim.diagnostic.config {
