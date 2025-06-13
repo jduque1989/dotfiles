@@ -5,12 +5,16 @@ return {
   version = false,
   opts = {
     provider = 'openai',
-    openai = {
-      endpoint = 'https://api.openai.com/v1',
-      model = 'gpt-4o-mini',
-      timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
-      temperature = 0,
-      max_completion_tokens = 8192,
+    providers = {
+      openai = {
+        endpoint = 'https://api.openai.com/v1',
+        model = 'gpt-4o-mini',
+        timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
+        extra_request_body = {
+          temperature = 0,
+          max_completion_tokens = 8192,
+        },
+      },
     },
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`

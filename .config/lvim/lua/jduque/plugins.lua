@@ -63,13 +63,17 @@ lvim.plugins = {
     build = "make",                             -- Use `make` to build Avante.nvim
     opts = {
       provider = "openai",
-      openai = {
-        -- endpoint = "https://api.openai.com/v1",
-        model = "gpt-4o-mini",
-        -- timeout = 30000,
-        -- temperature = 0,
-        -- max_tokens = 4096,
-        -- api_key = os.getenv("OPENAI_API_KEY"), -- Load API key from environment variable
+      providers = {
+        openai = {
+          -- endpoint = "https://api.openai.com/v1",
+          model = "gpt-4o-mini",
+          -- timeout = 30000,
+          extra_request_body = {
+            -- temperature = 0,
+            -- max_completion_tokens = 4096,
+          },
+          -- api_key = os.getenv("OPENAI_API_KEY"), -- Load API key from environment variable
+        },
       },
     },
     dependencies = {
