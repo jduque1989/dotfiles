@@ -31,6 +31,7 @@ require('lazy').setup {
   require 'plugins.avante',
   require 'plugins.codeium',
   require 'plugins.neogit',
+  require 'plugins.toggleterm',
 }
 
 vim.diagnostic.config {
