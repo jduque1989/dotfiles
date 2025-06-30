@@ -57,3 +57,4 @@ zshaddhistory() {
     autoload -U compinit && compinit
     zshaddhistory() { return 0 }
 }
+export PATH=$HOME/.npm-global/bin:$PATH
