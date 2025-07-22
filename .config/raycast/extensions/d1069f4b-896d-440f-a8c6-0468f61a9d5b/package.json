@@ -12,8 +12,12 @@
     "kenan",
     "dmacdermott",
     "pernielsentikaer",
+<<<<<<< HEAD
     "yansq",
     "amureki"
+=======
+    "yansq"
+>>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
   ],
   "license": "MIT",
   "commands": [
@@ -99,7 +103,11 @@
     },
     {
       "name": "backwardToBeginning",
+<<<<<<< HEAD
       "title": "Backward to the Beginning",
+=======
+      "title": "Backward to The Beginning",
+>>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
       "subtitle": "Spotify",
       "description": "Plays current track from the beginning in Spotify.",
       "mode": "no-view"
@@ -138,6 +146,7 @@
           "placeholder": "10%",
           "required": false
         }
+<<<<<<< HEAD
       ],
       "arguments": [
         {
@@ -147,6 +156,8 @@
           "placeholder": "10",
           "required": false
         }
+=======
+>>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
       ]
     },
     {
@@ -165,6 +176,7 @@
           "placeholder": "10%",
           "required": false
         }
+<<<<<<< HEAD
       ],
       "arguments": [
         {
@@ -174,6 +186,8 @@
           "placeholder": "10",
           "required": false
         }
+=======
+>>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
       ]
     },
     {
@@ -248,6 +262,7 @@
     }
   ],
   "dependencies": {
+<<<<<<< HEAD
     "@raycast/api": "^1.94.0",
     "run-applescript": "^7.0.0"
   },
@@ -257,10 +272,23 @@
     "eslint": "^9.22.0",
     "prettier": "3.5.3",
     "typescript": "^5.8.2"
+=======
+    "@raycast/api": "^1.53.3",
+    "run-applescript": "^6.0.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.6",
+    "@types/node": "^18.8.3",
+    "eslint": "^7.32.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "2.4.1",
+    "typescript": "^4.4.3"
+>>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
   },
   "scripts": {
     "build": "ray build -e dist",
     "dev": "ray develop",
+<<<<<<< HEAD
     "fix-lint": "ray lint --fix",
     "lint": "ray lint",
     "publish": "npx @raycast/api@latest publish"
@@ -269,3 +297,8 @@
     "macOS"
   ]
 }
+=======
+    "lint": "ray lint"
+  }
+}
+>>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)

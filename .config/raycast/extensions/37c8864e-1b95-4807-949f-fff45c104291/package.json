@@ -54,8 +54,13 @@
     "dev": "ray develop",
     "fix-lint": "ray lint --fix",
     "lint": "ray lint"
+<<<<<<< HEAD
   },
   "platforms": [
     "macOS"
   ]
 }
+=======
+  }
+}
+>>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)

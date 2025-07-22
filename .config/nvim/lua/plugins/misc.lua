@@ -106,6 +106,7 @@ return {
     end,
   },
   {
+<<<<<<< HEAD
     'rcarriga/nvim-notify',
     lazy = false,
     config = function()
@@ -117,6 +118,8 @@ return {
     end,
   },
   {
+=======
+>>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
     'folke/noice.nvim',
     config = function()
       require('noice').setup {
@@ -141,6 +144,7 @@ return {
     dependencies = {
       -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
       'MunifTanjim/nui.nvim',
+<<<<<<< HEAD
     },
   },
   {
@@ -162,4 +166,9 @@ return {
     'tweekmonster/startuptime.vim',
     cmd = 'StartupTime',
   },
+=======
+      'rcarriga/nvim-notify',
+    },
+  },
+>>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
 }

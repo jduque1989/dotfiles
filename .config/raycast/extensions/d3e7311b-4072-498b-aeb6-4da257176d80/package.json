@@ -26,10 +26,13 @@
     "lorem",
     "ipsum"
   ],
+<<<<<<< HEAD
   "platforms": [
     "macOS",
     "Windows"
   ],
+=======
+>>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
   "commands": [
     {
       "name": "paragraphs",
@@ -135,4 +138,8 @@
     "fix-lint": "ray lint --fix",
     "lint": "ray lint"
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
