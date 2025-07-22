@@ -9,8 +9,12 @@
     "iwyvi",
     "j3lte",
     "hsuq",
+<<<<<<< HEAD
     "pernielsentikaer",
     "ViGeng"
+=======
+    "pernielsentikaer"
+>>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
   ],
   "categories": [
     "System",
@@ -40,7 +44,10 @@
     "@types/ip": "^1.1.3",
     "@types/node": "^20.11.30",
     "eslint": "^8.57.0",
+<<<<<<< HEAD
     "prettier": "^3.5.3",
+=======
+>>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
     "typescript": "^5.4.3"
   },
   "scripts": {

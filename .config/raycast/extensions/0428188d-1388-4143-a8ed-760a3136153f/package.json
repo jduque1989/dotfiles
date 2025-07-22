@@ -6,8 +6,12 @@
   "icon": "command-icon.png",
   "author": "yedongze",
   "contributors": [
+<<<<<<< HEAD
     "Ianvs",
     "anirudh_gupta"
+=======
+    "Ianvs"
+>>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
   ],
   "license": "MIT",
   "commands": [
@@ -40,6 +44,7 @@
       "mode": "no-view"
     },
     {
+<<<<<<< HEAD
       "name": "clipboardToGhostty",
       "title": "Clipboard → Ghostty",
       "subtitle": "Open Path",
@@ -47,6 +52,8 @@
       "mode": "no-view"
     },
     {
+=======
+>>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
       "name": "finderToITerm",
       "title": "Finder → iTerm",
       "subtitle": "Open Path",
@@ -54,6 +61,7 @@
       "mode": "no-view"
     },
     {
+<<<<<<< HEAD
       "name": "finderToGhostty",
       "title": "Finder → Ghostty",
       "subtitle": "Open Path",
@@ -61,6 +69,8 @@
       "mode": "no-view"
     },
     {
+=======
+>>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
       "name": "finderToTerminal",
       "title": "Finder → Terminal",
       "subtitle": "Open Path",
@@ -108,6 +118,7 @@
       "subtitle": "Open Path",
       "description": "Open current Finder directory in Terminal",
       "mode": "no-view"
+<<<<<<< HEAD
     },
     {
       "name": "ghosttyToFinder",
@@ -115,6 +126,8 @@
       "subtitle": "Open Path",
       "description": "Open current Finder directory in Terminal",
       "mode": "no-view"
+=======
+>>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
     }
   ],
   "dependencies": {
@@ -128,14 +141,23 @@
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "react-devtools": "^4.19.2",
+<<<<<<< HEAD
     "typescript": "^4.4.3",
     "prettier": "^3.1.1"
+=======
+    "typescript": "^4.4.3"
+>>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
   },
   "scripts": {
     "build": "ray build -e dist",
     "dev": "ray develop"
+<<<<<<< HEAD
   },
   "platforms": [
     "macOS"
   ]
 }
+=======
+  }
+}
+>>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)

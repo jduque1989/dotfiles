@@ -3,6 +3,10 @@
 -- Year: 2025
 -- Version: V1
 require 'core.options'
+<<<<<<< HEAD
+=======
+require 'core.keymaps'
+>>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -16,7 +20,10 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup {
   require 'plugins.colortheme',
+<<<<<<< HEAD
   require 'plugins.misc',
+=======
+>>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
   require 'plugins.neotree',
   require 'plugins.bufferline',
   require 'plugins.lualine',
@@ -28,6 +35,7 @@ require('lazy').setup {
   require 'plugins.gitsigns',
   require 'plugins.dashboard',
   require 'plugins.indent-blankline',
+<<<<<<< HEAD
   require 'plugins.avante',
   require 'plugins.codeium',
   require 'plugins.neogit',
@@ -47,3 +55,12 @@ vim.defer_fn(function()
   require 'plugins.obsidian'
   require 'core.keymaps'
 end, 20)
+=======
+  require 'plugins.misc',
+  require 'plugins.avante',
+  require 'plugins.codeium',
+  require 'plugins.nvim-dap',
+  require 'plugins.obsidian',
+  -- require 'plugins.harpoon',
+}
+>>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)

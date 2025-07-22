@@ -20,6 +20,7 @@ return {
     templates = {
       folder = '/Users/juandavidduquea/Library/Mobile Documents/iCloud~md~obsidian/Documents/DIGITAL BRAIN/Templates',
       book_review = [[
+<<<<<<< HEAD
       ---
       Title:
       Author:
@@ -53,6 +54,41 @@ return {
       ## Favorite Quotes
       -
       ]],
+=======
+---
+Title: 
+Author: 
+Tags: 
+  - books
+  - abstract
+Status: 
+Rating: 
+Published: 
+ISBN: 
+Read_Start: 
+Read_End: 
+Categories: 
+  - 
+Keywords: 
+  - 
+URL: 
+Summary: 
+---
+
+# {{Title}}
+
+**Author:** {{Author}}
+
+## Key Takeaways
+- 
+
+## Insights & Applications
+- 
+
+## Favorite Quotes
+- 
+]],
+>>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
     },
   },
   config = function(_, opts)
@@ -81,6 +117,7 @@ return {
       end
     end, {})
   end,
+<<<<<<< HEAD
 
   -- Command to create a new meeting minutes note using the template in the 'templates' folder
   vim.api.nvim_create_user_command('NewRockStart', function()
@@ -115,4 +152,6 @@ return {
       print('Failed to create note at: ' .. new_note_path)
     end
   end, {}),
+=======
+>>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
 }

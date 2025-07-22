@@ -107,6 +107,7 @@
       "mode": "no-view"
     }
   ],
+<<<<<<< HEAD
   "tools": [
     {
       "name": "search-article",
@@ -269,6 +270,8 @@
       }
     ]
   },
+=======
+>>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
   "categories": [
     "Web",
     "News"
@@ -276,7 +279,10 @@
   "dependencies": {
     "@raycast/api": "^1.79.0",
     "@raycast/utils": "^1.14.0",
+<<<<<<< HEAD
     "dedent": "^1.5.3",
+=======
+>>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
     "node-fetch": "^3.3.2",
     "wikijs": "^6.4.1"
   },
