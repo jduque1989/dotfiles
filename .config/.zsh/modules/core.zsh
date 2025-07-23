@@ -29,3 +29,6 @@ export LC_ALL="en_US.UTF-8"
 
 # 🧩 Plugins adicionales como pyenv o asdf deben cargarse aquí si es necesario
 [[ -s "$HOME/.pyenv/init.zsh" ]] && source "$HOME/.pyenv/init.zsh"
+
+# 🗂️ Zoxide (smart cd replacement)
+eval "$(zoxide init --cmd cd zsh)"

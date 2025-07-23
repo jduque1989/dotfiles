@@ -19,7 +19,7 @@ return {
   {
     'ThePrimeagen/vim-be-good',
     dependencies = { 'nvim-lua/plenary.nvim' },
-    cmd = 'VimBeGood', -- Lazy-load on the VimBeGood command
+    cmd = 'VimBeGood',
   },
   {
     'ThePrimeagen/harpoon',
@@ -29,13 +29,11 @@ return {
     'kevinhwang91/nvim-ufo',
     dependencies = { 'kevinhwang91/promise-async' },
     config = function()
-      -- UFO Setup
-      vim.o.foldcolumn = '1' -- Show fold column
-      vim.o.foldlevel = 99 -- Start with all folds open
+      vim.o.foldcolumn = '1'
+      vim.o.foldlevel = 99
       vim.o.foldlevelstart = 99
       vim.o.foldenable = true
 
-      -- Key mappings for UFO
       vim.keymap.set('n', 'zR', require('ufo').openAllFolds, { desc = 'Open all folds' })
       vim.keymap.set('n', 'zM', require('ufo').closeAllFolds, { desc = 'Close all folds' })
       vim.keymap.set('n', 'zK', function()
@@ -46,46 +44,29 @@ return {
       end, { desc = 'Peek Fold' })
 
       require('ufo').setup {
-        provider_selector = function(bufnr, filetype, buftype)
+        provider_selector = function(_, _, _)
           return { 'lsp', 'indent' }
         end,
       }
     end,
   },
   {
-    -- Hints keybinds
     'folke/which-key.nvim',
-    opts = {
-      -- win = {
-      --   border = {
-      --     { '┌', 'FloatBorder' },
-      --     { '─', 'FloatBorder' },
-      --     { '┐', 'FloatBorder' },
-      --     { '│', 'FloatBorder' },
-      --     { '┘', 'FloatBorder' },
-      --     { '─', 'FloatBorder' },
-      --     { '└', 'FloatBorder' },
-      --     { '│', 'FloatBorder' },
-      --   },
-      -- },
-    },
+    opts = {},
   },
   {
-    -- Autoclose parentheses, brackets, quotes, etc.
     'windwp/nvim-autopairs',
     event = 'InsertEnter',
     config = true,
     opts = {},
   },
   {
-    -- Highlight todo, notes, etc in comments
     'folke/todo-comments.nvim',
     event = 'VimEnter',
     dependencies = { 'nvim-lua/plenary.nvim' },
     opts = { signs = false },
   },
   {
-    -- high-performance color highlighter
     'norcalli/nvim-colorizer.lua',
     config = function()
       require('colorizer').setup()
@@ -93,9 +74,7 @@ return {
   },
   {
     'numToStr/Comment.nvim',
-    opts = {
-      -- add any options here
-    },
+    opts = {},
   },
   {
     'iamcco/markdown-preview.nvim',
@@ -106,7 +85,6 @@ return {
     end,
   },
   {
-<<<<<<< HEAD
     'rcarriga/nvim-notify',
     lazy = false,
     config = function()
@@ -114,16 +92,13 @@ return {
       notify.setup {
         background_colour = '#000000',
       }
-      vim.notify = notify -- 🔥 línea crítica
+      vim.notify = notify
     end,
   },
   {
-=======
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
     'folke/noice.nvim',
     config = function()
       require('noice').setup {
-        -- add any options here
         routes = {
           {
             filter = {
@@ -142,9 +117,8 @@ return {
       }
     end,
     dependencies = {
-      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
       'MunifTanjim/nui.nvim',
-<<<<<<< HEAD
+      'rcarriga/nvim-notify',
     },
   },
   {
@@ -166,9 +140,4 @@ return {
     'tweekmonster/startuptime.vim',
     cmd = 'StartupTime',
   },
-=======
-      'rcarriga/nvim-notify',
-    },
-  },
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
 }
