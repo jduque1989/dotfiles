@@ -54,7 +54,6 @@ return {
       ## Favorite Quotes
       -
       ]],
-=======
 ---
 Title: 
 Author: 
@@ -152,6 +151,4 @@ Summary:
       print('Failed to create note at: ' .. new_note_path)
     end
   end, {}),
-=======
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
 }

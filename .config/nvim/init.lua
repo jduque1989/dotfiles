@@ -3,6 +3,7 @@
 -- Year: 2025
 -- Version: V1
 require 'core.options'
+require 'core.keymaps'
 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -44,6 +45,5 @@ vim.diagnostic.config {
 
 vim.defer_fn(function()
   require 'plugins.nvim-dap'
-  require 'plugins.obsidian'
-  require 'core.keymaps'
+  -- require 'plugins.obsidian'
 end, 20)

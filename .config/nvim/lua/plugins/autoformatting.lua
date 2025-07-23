@@ -19,6 +19,9 @@ return {
                 'shfmt',        -- Shell formatter
                 'checkmake',    -- Linter for Makefiles
                 'ruff',         -- Python linter and formatter
+                'black',        -- Python formatter (backup)
+                'isort',        -- Python import sorter
+                'mypy',         -- Python type checker
             },
             automatic_installation = true,
         }
@@ -27,6 +30,12 @@ return {
         local sources = {
             -- Diagnostics
             diagnostics.checkmake,
+            require('none-ls.diagnostics.ruff').with {
+                extra_args = { '--extend-select', 'I,N,W,E,F,C' },
+            },
+            diagnostics.mypy.with {
+                extra_args = { '--python-executable', 'python3' },
+            },
             -- Formatters
             formatting.prettier.with {
                 filetypes = { 'html', 'json', 'yaml', 'markdown' },
@@ -36,10 +45,17 @@ return {
                 args = { '-i', '4' }, -- indent with 4 spaces
             },
             formatting.terraform_fmt,
-            require('none-ls.formatting.ruff').with {
-                extra_args = { '--extend-select', 'I' },
+            -- Python formatters (prefer ruff)
+            require('none-ls.formatting.ruff_format').with {
+                extra_args = { '--line-length', '88' },
             },
-            require('none-ls.formatting.ruff_format'), -- Add ruff formatting
+            formatting.isort.with {
+                extra_args = { '--profile', 'black' },
+            },
+            -- Fallback Python formatter
+            formatting.black.with {
+                extra_args = { '--line-length', '88' },
+            },
         }
 
         -- Set up augroup for formatting on save
