@@ -22,7 +22,7 @@ export EDITOR='nvim'
 autoload -Uz compinit && compinit -d "${ZDOTDIR:-$HOME}/.zcompdump"
 
 # 🛣️ Path y variables comunes
-export PATH="$HOME/.local/bin:$HOME/.npm-global/bin:$HOME/.cargo/bin:$PATH"
+export PATH="/opt/homebrew/bin:$HOME/.local/bin:$HOME/.npm-global/bin:$HOME/.cargo/bin:$PATH"
 export NODE_PATH="/opt/homebrew/bin/node"
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
