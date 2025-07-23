@@ -1,0 +1,12 @@
+[manager]
+show_hidden = true
+sort_by = "natural"
+sort_reverse = false
+sort_dir_first = true
+
+[preview]
+tab_size = 4
+cache_dir = "/tmp/yazi-preview"
+ueberzug_scaler = "contain"
+ueberzug_offset = [0, 0]
+ueberzug_gap = [0, 0]
