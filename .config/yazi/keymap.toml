@@ -1,0 +1,6 @@
+[mgr]
+prepend_keymap = [
+  { on = "q", run = "close", desc = "Quit Yazi" },
+  { on = "gg", run = "seek -9999%", desc = "Go to top" },
+  { on = "G", run = "seek 100%", desc = "Go to bottom" }
+]

@@ -1,0 +1,13 @@
+[ui]
+title = { fg = "blue", bold = true }
+border = { fg = "gray" }
+highlight = { fg = "black", bg = "yellow", bold = true }
+
+[status]
+normal = { fg = "white", bg = "black" }
+select = { fg = "black", bg = "cyan" }
+
+[filetype]
+image = { fg = "magenta" }
+video = { fg = "red" }
+audio = { fg = "green" }
