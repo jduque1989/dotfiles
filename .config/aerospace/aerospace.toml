@@ -3,8 +3,18 @@
 
 # You can use it to add commands that run after AeroSpace startup.
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
+
 after-startup-command = [
+  'exec-and-forget ~/.config/aerospace/scripts/start_borders.sh',
+  'exec-and-forget sketchybar'
 ]
+
+exec-on-workspace-change = [
+  '/bin/bash', '-c',
+  'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
+]
+
+
 # Start AeroSpace at login
 start-at-login = true
 
@@ -55,15 +65,16 @@ automatically-unhide-macos-hidden-apps = false
     inner.vertical =   5
     outer.left =       5
     outer.bottom =     5
-    outer.top =        5
+    outer.top =        37
     outer.right =      5
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # 'main' binding mode must be always presented
 # Fallback value (if you omit the key): mode.main.binding = {}
-[mode.main.binding]
 
+
+[mode.main.binding]
     # All possible keys:
     # - Letters.        a, b, c, ..., z
     # - Numbers.        0, 1, 2, ..., 9
@@ -90,7 +101,6 @@ automatically-unhide-macos-hidden-apps = false
     #     activate
     # end tell'
     # '''
-
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout
     alt-slash = 'layout tiles horizontal vertical'
     alt-comma = 'layout accordion horizontal vertical'
@@ -112,8 +122,6 @@ automatically-unhide-macos-hidden-apps = false
 # Move window to the previous monitor (wraps around)
     alt-shift-left = 'move-node-to-monitor --wrap-around prev'
     # See: https://nikitabobko.github.io/AeroSpace/commands#resize
-    ctrl-o = 'resize smart -50'
-    ctrl-p = 'resize smart +50'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
     alt-1 = 'workspace 1'
@@ -186,9 +194,19 @@ automatically-unhide-macos-hidden-apps = false
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#mode
     alt-shift-semicolon = 'mode service'
+    alt-shift-comma = 'mode resize'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
+
+[mode.resize.binding]
+h = 'resize width -50'
+j = 'resize height +50'
+k = 'resize height -50'
+l = 'resize width +50'
+b = 'balance-sizes'
+esc = 'mode main'
+
 [mode.service.binding]
     esc = ['reload-config', 'mode main']
     r = ['flatten-workspace-tree', 'mode main'] # reset layout
@@ -215,4 +233,5 @@ run = "move-node-to-workspace B"
 [[on-window-detected]]
 if.app-id = 'com.google.Chrome'
 run = "move-node-to-workspace B"
+
 
