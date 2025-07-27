@@ -37,7 +37,14 @@ fi
 # Apply the flake configuration
 echo "🔧 Applying Nix flake configuration..."
 cd ~/dotfiles
-sudo darwin-rebuild switch --flake .#simple
+
+# Source Nix environment to get darwin-rebuild in PATH
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+
+# Now darwin-rebuild should be available
+sudo -E darwin-rebuild switch --flake .#simple
 
 echo "✅ Nix configuration applied!"
 
