@@ -11,6 +11,7 @@
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
   let
+    username = "juandavidduquea";
     configuration = { pkgs, ... }: {
       # List packages installed in system profile
       environment.systemPackages = with pkgs; [
@@ -52,14 +53,13 @@
         docker-compose
       ];
 
-      # Auto upgrade nix package and the daemon service
-      services.nix-daemon.enable = true;
-      
       # Nix configuration
       nix.settings = {
         experimental-features = [ "nix-command" "flakes" ];
-        auto-optimise-store = true;
       };
+      
+      # Enable automatic store optimization
+      nix.optimise.automatic = true;
 
       # Create /etc/zshrc that loads the nix-darwin environment
       programs.zsh.enable = true;
@@ -78,15 +78,7 @@
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#simple
     darwinConfigurations."simple" = nix-darwin.lib.darwinSystem {
-      modules = [ 
-        configuration
-        home-manager.darwinModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.juandavidduquea = import ./nix/modules/home.nix;
-        }
-      ];
+      modules = [ configuration ];
     };
 
     # Expose the package set, including overlays, for convenience
