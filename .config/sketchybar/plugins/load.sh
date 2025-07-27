@@ -3,7 +3,7 @@
 source "$HOME/.config/sketchybar/colors.sh"
 
 # Get 1-minute load average
-LOAD_1MIN=$(uptime | awk -F'load average:' '{print $2}' | awk -F',' '{print $1}' | xargs)
+LOAD_1MIN=$(uptime | awk -F'load averages:' '{print $2}' | awk '{print $1}' | xargs)
 
 # Get number of CPU cores for context
 CPU_CORES=$(sysctl -n hw.ncpu)

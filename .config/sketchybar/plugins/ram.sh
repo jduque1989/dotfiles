@@ -41,16 +41,16 @@ TOTAL_COMPACT=$(format_compact $TOTAL_MEMORY)
 
 # Modern RAM icon based on usage
 if (( MEMORY_PERCENT >= 90 )); then
-    ICON="🧠"
+    ICON="⚡"
     COLOR=$RED
 elif (( MEMORY_PERCENT >= 75 )); then
-    ICON="💾"
+    ICON="⚡"
     COLOR=$ORANGE
 elif (( MEMORY_PERCENT >= 60 )); then
-    ICON="💿"
+    ICON="⚡"
     COLOR=$YELLOW
 else
-    ICON="💿"
+    ICON="⚡"
     COLOR=$GREEN
 fi
 
