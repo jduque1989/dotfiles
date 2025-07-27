@@ -48,6 +48,9 @@
       # Enable automatic store optimization
       nix.optimise.automatic = true;
 
+      # Fix GID mismatch for existing Nix installation
+      ids.gids.nixbld = 350;
+
       # Create /etc/zshrc that loads the nix-darwin environment
       programs.zsh.enable = true;
 
