@@ -18,10 +18,10 @@ elif (( USED_INT >= 80 )); then
     ICON="⚠️"
     COLOR=$ORANGE
 elif (( USED_INT >= 70 )); then
-    ICON="💾"
+    ICON="📦"
     COLOR=$YELLOW
 else
-    ICON="💾"
+    ICON="📦"
     COLOR=$GREEN
 fi
 

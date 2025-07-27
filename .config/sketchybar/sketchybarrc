@@ -71,6 +71,66 @@ sketchybar --add item front_app left \
                           script="$PLUGIN_DIR/front_app.sh" \
            --subscribe front_app front_app_switched
 
+##### Adding Center Items (Media Player - Spotify & YouTube) #####
+sketchybar --add item media_player center \
+           --set media_player update_freq=3 \
+                             background.drawing=on \
+                             background.color=0x15000000 \
+                             background.corner_radius=6 \
+                             background.height=20 \
+                             background.padding_left=4 \
+                             background.padding_right=4 \
+                             icon.padding_left=8 \
+                             icon.padding_right=4 \
+                             label.padding_left=0 \
+                             label.padding_right=8 \
+                             label.font="SF Pro:Medium:11.0" \
+                             icon.font="SF Pro:Medium:12.0" \
+                             script="$PLUGIN_DIR/media_player.sh" \
+                             click_script="$PLUGIN_DIR/media_click.sh" \
+                             drawing=off \
+           --add item media_player.previous popup.media_player \
+           --set media_player.previous background.drawing=on \
+                                      background.color=0x80000000 \
+                                      background.corner_radius=4 \
+                                      background.height=18 \
+                                      background.padding_left=4 \
+                                      background.padding_right=4 \
+                                      icon.padding_left=6 \
+                                      icon.padding_right=4 \
+                                      label.padding_left=0 \
+                                      label.padding_right=6 \
+                                      label.font="SF Pro:Regular:10.0" \
+                                      click_script="$PLUGIN_DIR/media_click.sh previous" \
+           --add item media_player.playpause popup.media_player \
+           --set media_player.playpause background.drawing=on \
+                                        background.color=0x80000000 \
+                                        background.corner_radius=4 \
+                                        background.height=18 \
+                                        background.padding_left=4 \
+                                        background.padding_right=4 \
+                                        icon.padding_left=6 \
+                                        icon.padding_right=4 \
+                                        label.padding_left=0 \
+                                        label.padding_right=6 \
+                                        label.font="SF Pro:Regular:10.0" \
+                                        click_script="$PLUGIN_DIR/media_click.sh playpause" \
+           --add item media_player.next popup.media_player \
+           --set media_player.next background.drawing=on \
+                                   background.color=0x80000000 \
+                                   background.corner_radius=4 \
+                                   background.height=18 \
+                                   background.padding_left=4 \
+                                   background.padding_right=4 \
+                                   icon.padding_left=6 \
+                                   icon.padding_right=4 \
+                                   label.padding_left=0 \
+                                   label.padding_right=6 \
+                                   label.font="SF Pro:Regular:10.0" \
+                                   click_script="$PLUGIN_DIR/media_click.sh next" \
+           --add event media_update \
+           --subscribe media_player media_update
+
 ##### Adding Right Items (Calendar → Battery → Volume → System Monitoring) #####
 sketchybar --add item clock right \
            --set clock update_freq=10 \
@@ -118,66 +178,73 @@ sketchybar --add item clock right \
                        script="$PLUGIN_DIR/volume.sh" \
            --subscribe volume volume_change
 
-##### Adding System Health & Performance Monitoring #####
-sketchybar --add item temperature right \
-           --set temperature update_freq=10 \
-                           background.drawing=on \
-                           background.color=0x20000000 \
-                           background.corner_radius=4 \
-                           background.height=18 \
-                           background.padding_left=2 \
-                           background.padding_right=2 \
-                           icon.padding_left=6 \
-                           icon.padding_right=2 \
-                           label.padding_left=0 \
-                           label.padding_right=6 \
-                           label.font="SF Pro:Medium:10.0" \
-                           script="$PLUGIN_DIR/temperature.sh" \
-           --add item disk right \
-           --set disk update_freq=30 \
-                      background.drawing=on \
-                      background.color=0x20000000 \
-                      background.corner_radius=4 \
-                      background.height=18 \
-                      background.padding_left=2 \
-                      background.padding_right=2 \
-                      icon.padding_left=6 \
-                      icon.padding_right=2 \
-                      label.padding_left=0 \
-                      label.padding_right=6 \
-                      label.font="SF Pro:Medium:10.0" \
-                      script="$PLUGIN_DIR/disk.sh" \
-           --add item load right \
-           --set load update_freq=5 \
-                      background.drawing=on \
-                      background.color=0x20000000 \
-                      background.corner_radius=4 \
-                      background.height=18 \
-                      background.padding_left=2 \
-                      background.padding_right=2 \
-                      icon.padding_left=6 \
-                      icon.padding_right=2 \
-                      label.padding_left=0 \
-                      label.padding_right=6 \
-                      label.font="SF Pro:Medium:10.0" \
-                      script="$PLUGIN_DIR/load.sh"
+##### Adding System Stats Menu #####
+sketchybar --add item system_stats_menu right \
+           --set system_stats_menu update_freq=10 \
+                                  background.drawing=on \
+                                  background.color=0x20000000 \
+                                  background.corner_radius=4 \
+                                  background.height=18 \
+                                  background.padding_left=2 \
+                                  background.padding_right=2 \
+                                  icon.padding_left=6 \
+                                  icon.padding_right=2 \
+                                  label.padding_left=0 \
+                                  label.padding_right=6 \
+                                  label.font="SF Pro:Medium:10.0" \
+                                  script="$PLUGIN_DIR/system_stats.sh" \
+                                  click_script="$PLUGIN_DIR/system_menu.sh toggle" \
+           --add item system_stats_menu.ram popup.system_stats_menu \
+           --set system_stats_menu.ram background.drawing=on \
+                                       background.color=0x30000000 \
+                                       background.corner_radius=4 \
+                                       background.height=18 \
+                                       background.padding_left=4 \
+                                       background.padding_right=4 \
+                                       icon.padding_left=6 \
+                                       icon.padding_right=4 \
+                                       label.padding_left=0 \
+                                       label.padding_right=6 \
+                                       label.font="SF Pro:Regular:10.0" \
+           --add item system_stats_menu.disk popup.system_stats_menu \
+           --set system_stats_menu.disk background.drawing=on \
+                                        background.color=0x30000000 \
+                                        background.corner_radius=4 \
+                                        background.height=18 \
+                                        background.padding_left=4 \
+                                        background.padding_right=4 \
+                                        icon.padding_left=6 \
+                                        icon.padding_right=4 \
+                                        label.padding_left=0 \
+                                        label.padding_right=6 \
+                                        label.font="SF Pro:Regular:10.0" \
+           --add item system_stats_menu.uptime popup.system_stats_menu \
+           --set system_stats_menu.uptime background.drawing=on \
+                                          background.color=0x30000000 \
+                                          background.corner_radius=4 \
+                                          background.height=18 \
+                                          background.padding_left=4 \
+                                          background.padding_right=4 \
+                                          icon.padding_left=6 \
+                                          icon.padding_right=4 \
+                                          label.padding_left=0 \
+                                          label.padding_right=6 \
+                                          label.font="SF Pro:Regular:10.0" \
+           --add item system_stats_menu.load popup.system_stats_menu \
+           --set system_stats_menu.load background.drawing=on \
+                                        background.color=0x30000000 \
+                                        background.corner_radius=4 \
+                                        background.height=18 \
+                                        background.padding_left=4 \
+                                        background.padding_right=4 \
+                                        icon.padding_left=6 \
+                                        icon.padding_right=4 \
+                                        label.padding_left=0 \
+                                        label.padding_right=6 \
+                                        label.font="SF Pro:Regular:10.0"
 
 ##### Adding System Monitoring Items #####
-sketchybar --add item ram right \
-           --set ram update_freq=8 \
-                     background.drawing=on \
-                     background.color=0x20000000 \
-                     background.corner_radius=4 \
-                     background.height=18 \
-                     background.padding_left=2 \
-                     background.padding_right=2 \
-                     icon.padding_left=6 \
-                     icon.padding_right=2 \
-                     label.padding_left=0 \
-                     label.padding_right=6 \
-                     label.font="SF Pro:Medium:10.0" \
-                     script="$PLUGIN_DIR/ram.sh" \
-           --add item cpu right \
+sketchybar --add item cpu right \
            --set cpu update_freq=4 \
                      background.drawing=on \
                      background.color=0x20000000 \
