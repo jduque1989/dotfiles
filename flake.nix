@@ -21,7 +21,6 @@
         wget
         tree
         htop
-        btop
         
         # Modern CLI replacements
         eza        # ls replacement
@@ -34,23 +33,11 @@
         neovim
         tmux
         
-        # Node.js and npm
-        nodejs
-        nodePackages.npm
-        
-        # Python with pyenv alternative
+        # Python
         python3
-        python3Packages.pip
-        
-        # Rust
-        rustc
-        cargo
         
         # Other utilities
         jq
-        yq
-        docker
-        docker-compose
       ];
 
       # Nix configuration
