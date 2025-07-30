@@ -12,7 +12,7 @@ if [ -d "/nix/var/nix/profiles/default/bin" ]; then
 fi
 
 # Nix-specific aliases
-alias nix-update="darwin-rebuild switch --flake ~/.dotfiles#simple"
+alias nix-update="darwin-rebuild switch --flake ~/dotfiles#simple"
 alias nix-rollback="darwin-rebuild rollback"
 alias nix-list="nix profile list"
 alias nix-search="nix search nixpkgs"
@@ -32,9 +32,9 @@ nix-shell-run() {
 
 # Function to quickly edit Nix configuration
 nix-config() {
-  nvim ~/.dotfiles/flake.nix
+  nvim ~/dotfiles/flake.nix
 }
 
 nix-home-config() {
-  nvim ~/.dotfiles/nix/modules/home.nix
+  nvim ~/dotfiles/nix/modules/home.nix
 }

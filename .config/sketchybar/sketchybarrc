@@ -13,20 +13,21 @@ sketchybar --bar height=32 \
                  padding_right=10 \
                  color=$BAR_COLOR
 
-##### Default Item Settings #####
+##### Default Item Settings - No Borders #####
 sketchybar --default icon.font="SF Pro:Semibold:15.0" \
                      icon.color=$ICON_COLOR \
                      label.font="SF Pro:Semibold:13.0" \
                      label.color=$LABEL_COLOR \
-                     padding_left=5 \
-                     padding_right=5 \
+                     padding_left=2 \
+                     padding_right=2 \
                      label.padding_left=4 \
                      label.padding_right=4 \
                      icon.padding_left=4 \
-                     icon.padding_right=4
+                     icon.padding_right=4 \
+                     background.border_width=0
 
-##### Modern Aerospace Workspace Indicators #####
-# Enhanced workspaces with better visibility and functionality
+##### Modern Aerospace Workspace Indicators - No Borders #####
+# Enhanced workspaces with seamless appearance
 
 WORKSPACES=(T B M W)
 WORKSPACE_NAMES=("Terminal" "Browser" "Music" "Work")
@@ -45,12 +46,13 @@ for i in "${!WORKSPACES[@]}"; do
                      label.font="SF Pro:Regular:10.0" \
                      label.padding_left=0 \
                      label.padding_right=8 \
-                     background.padding_left=2 \
-                     background.padding_right=2 \
+                     background.padding_left=0 \
+                     background.padding_right=0 \
                      background.color=$WORKSPACE_EMPTY_BG \
-                     background.corner_radius=6 \
+                     background.corner_radius=2 \
                      background.height=24 \
                      background.drawing=on \
+                     background.border_width=0 \
                      script="$PLUGIN_DIR/aerospace.sh" \
                      click_script="aerospace workspace $workspace" \
                --subscribe space_$workspace aerospace_workspace_change window_focus front_app_switched
@@ -71,15 +73,16 @@ sketchybar --add item front_app left \
                           script="$PLUGIN_DIR/front_app.sh" \
            --subscribe front_app front_app_switched
 
-##### Adding Center Items (Media Player - Spotify & YouTube) #####
+##### Adding Center Items (Media Player - Spotify & YouTube) - No Borders #####
 sketchybar --add item media_player center \
            --set media_player update_freq=3 \
                              background.drawing=on \
-                             background.color=0x15000000 \
-                             background.corner_radius=6 \
+                             background.color=0x10000000 \
+                             background.corner_radius=2 \
                              background.height=20 \
-                             background.padding_left=4 \
-                             background.padding_right=4 \
+                             background.padding_left=0 \
+                             background.padding_right=0 \
+                             background.border_width=0 \
                              icon.padding_left=8 \
                              icon.padding_right=4 \
                              label.padding_left=0 \
@@ -91,11 +94,12 @@ sketchybar --add item media_player center \
                              drawing=off \
            --add item media_player.previous popup.media_player \
            --set media_player.previous background.drawing=on \
-                                      background.color=0x80000000 \
-                                      background.corner_radius=4 \
+                                      background.color=0x40000000 \
+                                      background.corner_radius=2 \
                                       background.height=18 \
-                                      background.padding_left=4 \
-                                      background.padding_right=4 \
+                                      background.padding_left=0 \
+                                      background.padding_right=0 \
+                                      background.border_width=0 \
                                       icon.padding_left=6 \
                                       icon.padding_right=4 \
                                       label.padding_left=0 \
@@ -104,11 +108,12 @@ sketchybar --add item media_player center \
                                       click_script="$PLUGIN_DIR/media_click.sh previous" \
            --add item media_player.playpause popup.media_player \
            --set media_player.playpause background.drawing=on \
-                                        background.color=0x80000000 \
-                                        background.corner_radius=4 \
+                                        background.color=0x40000000 \
+                                        background.corner_radius=2 \
                                         background.height=18 \
-                                        background.padding_left=4 \
-                                        background.padding_right=4 \
+                                        background.padding_left=0 \
+                                        background.padding_right=0 \
+                                        background.border_width=0 \
                                         icon.padding_left=6 \
                                         icon.padding_right=4 \
                                         label.padding_left=0 \
@@ -117,11 +122,12 @@ sketchybar --add item media_player center \
                                         click_script="$PLUGIN_DIR/media_click.sh playpause" \
            --add item media_player.next popup.media_player \
            --set media_player.next background.drawing=on \
-                                   background.color=0x80000000 \
-                                   background.corner_radius=4 \
+                                   background.color=0x40000000 \
+                                   background.corner_radius=2 \
                                    background.height=18 \
-                                   background.padding_left=4 \
-                                   background.padding_right=4 \
+                                   background.padding_left=0 \
+                                   background.padding_right=0 \
+                                   background.border_width=0 \
                                    icon.padding_left=6 \
                                    icon.padding_right=4 \
                                    label.padding_left=0 \
@@ -131,15 +137,16 @@ sketchybar --add item media_player center \
            --add event media_update \
            --subscribe media_player media_update
 
-##### Adding Right Items (Calendar → Battery → Volume → System Monitoring) #####
+##### Adding Right Items - No Borders, Seamless Design #####
 sketchybar --add item clock right \
            --set clock update_freq=10 \
                        background.drawing=on \
                        background.color=0x20000000 \
-                       background.corner_radius=4 \
+                       background.corner_radius=2 \
                        background.height=18 \
-                       background.padding_left=2 \
-                       background.padding_right=2 \
+                       background.padding_left=0 \
+                       background.padding_right=0 \
+                       background.border_width=0 \
                        icon=📅 \
                        icon.color=$WHITE \
                        icon.padding_left=6 \
@@ -152,10 +159,11 @@ sketchybar --add item clock right \
            --set battery update_freq=120 \
                         background.drawing=on \
                         background.color=0x20000000 \
-                        background.corner_radius=4 \
+                        background.corner_radius=2 \
                         background.height=18 \
-                        background.padding_left=2 \
-                        background.padding_right=2 \
+                        background.padding_left=0 \
+                        background.padding_right=0 \
+                        background.border_width=0 \
                         icon.padding_left=6 \
                         icon.padding_right=2 \
                         label.padding_left=0 \
@@ -166,10 +174,11 @@ sketchybar --add item clock right \
            --add item volume right \
            --set volume background.drawing=on \
                        background.color=0x20000000 \
-                       background.corner_radius=4 \
+                       background.corner_radius=2 \
                        background.height=18 \
-                       background.padding_left=2 \
-                       background.padding_right=2 \
+                       background.padding_left=0 \
+                       background.padding_right=0 \
+                       background.border_width=0 \
                        icon.padding_left=6 \
                        icon.padding_right=2 \
                        label.padding_left=0 \
@@ -178,15 +187,16 @@ sketchybar --add item clock right \
                        script="$PLUGIN_DIR/volume.sh" \
            --subscribe volume volume_change
 
-##### Adding System Stats Menu #####
+##### Adding System Stats Menu - No Borders #####
 sketchybar --add item system_stats_menu right \
            --set system_stats_menu update_freq=10 \
                                   background.drawing=on \
                                   background.color=0x20000000 \
-                                  background.corner_radius=4 \
+                                  background.corner_radius=2 \
                                   background.height=18 \
-                                  background.padding_left=2 \
-                                  background.padding_right=2 \
+                                  background.padding_left=0 \
+                                  background.padding_right=0 \
+                                  background.border_width=0 \
                                   icon.padding_left=6 \
                                   icon.padding_right=2 \
                                   label.padding_left=0 \
@@ -196,11 +206,12 @@ sketchybar --add item system_stats_menu right \
                                   click_script="$PLUGIN_DIR/system_menu.sh toggle" \
            --add item system_stats_menu.ram popup.system_stats_menu \
            --set system_stats_menu.ram background.drawing=on \
-                                       background.color=0x30000000 \
-                                       background.corner_radius=4 \
+                                       background.color=0x99000000 \
+                                       background.corner_radius=2 \
                                        background.height=18 \
-                                       background.padding_left=4 \
-                                       background.padding_right=4 \
+                                       background.padding_left=0 \
+                                       background.padding_right=0 \
+                                       background.border_width=0 \
                                        icon.padding_left=6 \
                                        icon.padding_right=4 \
                                        label.padding_left=0 \
@@ -208,11 +219,12 @@ sketchybar --add item system_stats_menu right \
                                        label.font="SF Pro:Regular:10.0" \
            --add item system_stats_menu.disk popup.system_stats_menu \
            --set system_stats_menu.disk background.drawing=on \
-                                        background.color=0x30000000 \
-                                        background.corner_radius=4 \
+                                        background.color=0x99000000 \
+                                        background.corner_radius=2 \
                                         background.height=18 \
-                                        background.padding_left=4 \
-                                        background.padding_right=4 \
+                                        background.padding_left=0 \
+                                        background.padding_right=0 \
+                                        background.border_width=0 \
                                         icon.padding_left=6 \
                                         icon.padding_right=4 \
                                         label.padding_left=0 \
@@ -220,11 +232,12 @@ sketchybar --add item system_stats_menu right \
                                         label.font="SF Pro:Regular:10.0" \
            --add item system_stats_menu.uptime popup.system_stats_menu \
            --set system_stats_menu.uptime background.drawing=on \
-                                          background.color=0x30000000 \
-                                          background.corner_radius=4 \
+                                          background.color=0x99000000 \
+                                          background.corner_radius=2 \
                                           background.height=18 \
-                                          background.padding_left=4 \
-                                          background.padding_right=4 \
+                                          background.padding_left=0 \
+                                          background.padding_right=0 \
+                                          background.border_width=0 \
                                           icon.padding_left=6 \
                                           icon.padding_right=4 \
                                           label.padding_left=0 \
@@ -232,26 +245,28 @@ sketchybar --add item system_stats_menu right \
                                           label.font="SF Pro:Regular:10.0" \
            --add item system_stats_menu.load popup.system_stats_menu \
            --set system_stats_menu.load background.drawing=on \
-                                        background.color=0x30000000 \
-                                        background.corner_radius=4 \
+                                        background.color=0x99000000 \
+                                        background.corner_radius=2 \
                                         background.height=18 \
-                                        background.padding_left=4 \
-                                        background.padding_right=4 \
+                                        background.padding_left=0 \
+                                        background.padding_right=0 \
+                                        background.border_width=0 \
                                         icon.padding_left=6 \
                                         icon.padding_right=4 \
                                         label.padding_left=0 \
                                         label.padding_right=6 \
                                         label.font="SF Pro:Regular:10.0"
 
-##### Adding System Monitoring Items #####
+##### Adding System Monitoring Items - No Borders #####
 sketchybar --add item cpu right \
            --set cpu update_freq=4 \
                      background.drawing=on \
                      background.color=0x20000000 \
-                     background.corner_radius=4 \
+                     background.corner_radius=2 \
                      background.height=18 \
-                     background.padding_left=2 \
-                     background.padding_right=2 \
+                     background.padding_left=0 \
+                     background.padding_right=0 \
+                     background.border_width=0 \
                      icon.padding_left=6 \
                      icon.padding_right=2 \
                      label.padding_left=0 \
@@ -262,10 +277,11 @@ sketchybar --add item cpu right \
            --set network_traffic update_freq=2 \
                                  background.drawing=on \
                                  background.color=0x20000000 \
-                                 background.corner_radius=4 \
+                                 background.corner_radius=2 \
                                  background.height=18 \
-                                 background.padding_left=2 \
-                                 background.padding_right=2 \
+                                 background.padding_left=0 \
+                                 background.padding_right=0 \
+                                 background.border_width=0 \
                                  icon.padding_left=6 \
                                  icon.padding_right=2 \
                                  label.padding_left=0 \
@@ -276,10 +292,11 @@ sketchybar --add item cpu right \
            --set network update_freq=8 \
                          background.drawing=on \
                          background.color=0x20000000 \
-                         background.corner_radius=4 \
+                         background.corner_radius=2 \
                          background.height=18 \
-                         background.padding_left=2 \
-                         background.padding_right=2 \
+                         background.padding_left=0 \
+                         background.padding_right=0 \
+                         background.border_width=0 \
                          icon.padding_left=6 \
                          icon.padding_right=2 \
                          label.padding_left=0 \
@@ -290,4 +307,4 @@ sketchybar --add item cpu right \
 ##### Force all scripts to run the first time #####
 sketchybar --update
 
-echo "SketchyBar configuration loaded"
+echo "SketchyBar configuration loaded - No borders, seamless design"

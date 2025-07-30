@@ -33,6 +33,7 @@ require('lazy').setup {
   require 'plugins.codeium',
   require 'plugins.neogit',
   require 'plugins.toggleterm',
+  require 'plugins.flash',
 }
 
 vim.diagnostic.config {
