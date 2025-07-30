@@ -19,6 +19,30 @@ EOF
     fi
 }
 
+# Function to get spotify_player info
+get_spotify_player_info() {
+    # Check if spotify_player process is running
+    if pgrep -f "spotify_player" > /dev/null 2>&1; then
+        # Use full path to spotify_player (SketchyBar doesn't have full PATH)
+        SPOTIFY_PLAYER_PATH="/Users/juandavidduquea/.cargo/bin/spotify_player"
+        if [[ -x "$SPOTIFY_PLAYER_PATH" ]]; then
+            # Get current track info using spotify_player command
+            PLAYBACK_JSON=$($SPOTIFY_PLAYER_PATH get key playback 2>/dev/null)
+            if [[ -n "$PLAYBACK_JSON" ]]; then
+                # Parse JSON to extract track name and artist
+                TRACK_NAME=$(echo "$PLAYBACK_JSON" | jq -r '.item.name // empty' 2>/dev/null)
+                ARTIST_NAME=$(echo "$PLAYBACK_JSON" | jq -r '.item.artists[0].name // empty' 2>/dev/null)
+                IS_PLAYING=$(echo "$PLAYBACK_JSON" | jq -r '.is_playing // false' 2>/dev/null)
+                
+                if [[ "$IS_PLAYING" == "true" && -n "$TRACK_NAME" && -n "$ARTIST_NAME" && "$TRACK_NAME" != "null" && "$ARTIST_NAME" != "null" ]]; then
+                    echo "spotify_player|🎵|$TRACK_NAME • $ARTIST_NAME"
+                    return
+                fi
+            fi
+        fi
+    fi
+}
+
 # Function to get YouTube info from Chrome
 get_chrome_youtube() {
     if pgrep -x "Google Chrome" > /dev/null; then
@@ -68,10 +92,18 @@ EOF
 # Try to get media info from different sources (priority order)
 MEDIA_INFO=""
 
-# Check Spotify first (highest priority for music)
-SPOTIFY_INFO=$(get_spotify_info)
-if [[ -n "$SPOTIFY_INFO" && "$SPOTIFY_INFO" != "" ]]; then
-    MEDIA_INFO="$SPOTIFY_INFO"
+# Check spotify_player first (highest priority)
+SPOTIFY_PLAYER_INFO=$(get_spotify_player_info)
+if [[ -n "$SPOTIFY_PLAYER_INFO" && "$SPOTIFY_PLAYER_INFO" != "" ]]; then
+    MEDIA_INFO="$SPOTIFY_PLAYER_INFO"
+fi
+
+# Check Spotify app if no spotify_player
+if [[ -z "$MEDIA_INFO" ]]; then
+    SPOTIFY_INFO=$(get_spotify_info)
+    if [[ -n "$SPOTIFY_INFO" && "$SPOTIFY_INFO" != "" ]]; then
+        MEDIA_INFO="$SPOTIFY_INFO"
+    fi
 fi
 
 # Check YouTube in Chrome if no Spotify

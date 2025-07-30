@@ -16,6 +16,40 @@ toggle_menu() {
 
 update_menu_items() {
     case "$CURRENT_SOURCE" in
+        "spotify_player")
+            # spotify_player controls
+            SPOTIFY_PLAYER_PATH="/Users/juandavidduquea/.cargo/bin/spotify_player"
+            PLAYBACK_JSON=$($SPOTIFY_PLAYER_PATH get key playback 2>/dev/null)
+            IS_PLAYING=$(echo "$PLAYBACK_JSON" | jq -r '.is_playing // false' 2>/dev/null)
+            if [[ "$IS_PLAYING" == "true" ]]; then
+                PLAY_PAUSE_ICON="⏸️"
+                PLAY_PAUSE_LABEL="Pause"
+            else
+                PLAY_PAUSE_ICON="▶️"
+                PLAY_PAUSE_LABEL="Play"
+            fi
+            
+            sketchybar --set media_player.previous \
+                icon="⏮️" \
+                icon.color=$WHITE \
+                label="Previous" \
+                label.color=$WHITE \
+                drawing=on
+                
+            sketchybar --set media_player.playpause \
+                icon="$PLAY_PAUSE_ICON" \
+                icon.color=$WHITE \
+                label="$PLAY_PAUSE_LABEL" \
+                label.color=$WHITE \
+                drawing=on
+                
+            sketchybar --set media_player.next \
+                icon="⏭️" \
+                icon.color=$WHITE \
+                label="Next" \
+                label.color=$WHITE \
+                drawing=on
+            ;;
         "spotify")
             # Spotify controls
             PLAYER_STATE=$(osascript -e 'tell application "Spotify" to get player state as string' 2>/dev/null)
@@ -83,6 +117,9 @@ update_menu_items() {
 case "$1" in
     "previous")
         case "$CURRENT_SOURCE" in
+            "spotify_player")
+                /Users/juandavidduquea/.cargo/bin/spotify_player playback previous 2>/dev/null
+                ;;
             "spotify")
                 osascript -e 'tell application "Spotify" to previous track'
                 ;;
@@ -99,6 +136,9 @@ case "$1" in
         ;;
     "playpause")
         case "$CURRENT_SOURCE" in
+            "spotify_player")
+                /Users/juandavidduquea/.cargo/bin/spotify_player playback play-pause 2>/dev/null
+                ;;
             "spotify")
                 osascript -e 'tell application "Spotify" to playpause'
                 ;;
@@ -115,6 +155,9 @@ case "$1" in
         ;;
     "next")
         case "$CURRENT_SOURCE" in
+            "spotify_player")
+                /Users/juandavidduquea/.cargo/bin/spotify_player playback next 2>/dev/null
+                ;;
             "spotify")
                 osascript -e 'tell application "Spotify" to next track'
                 ;;
