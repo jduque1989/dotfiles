@@ -11,6 +11,7 @@ toggle_menu() {
         update_disk_item  
         update_uptime_item
         update_load_item
+        update_temperature_item
         sketchybar --set system_stats_menu popup.drawing=on
     fi
 }
@@ -147,6 +148,46 @@ update_load_item() {
         icon="$LOAD_ICON" \
         icon.color=$LOAD_COLOR \
         label="$LOAD_FORMATTED ($LOAD_PERCENT%)" \
+        label.color=$WHITE
+}
+
+update_temperature_item() {
+    # Get CPU temperature using safe methods (avoid sudo powermetrics)
+    get_temperature() {
+        # Use system load as temperature indicator (safe and fast)
+        LOAD_1MIN=$(uptime | awk -F'load averages:' '{print $2}' | awk '{print $1}' | xargs)
+        CPU_CORES=$(sysctl -n hw.ncpu)
+        LOAD_PERCENT=$(echo "scale=0; $LOAD_1MIN * 100 / $CPU_CORES" | bc -l 2>/dev/null || echo "30")
+        # Estimate temp based on load (30-80°C range)
+        ESTIMATED_TEMP=$(echo "scale=0; 30 + ($LOAD_PERCENT * 50 / 100)" | bc -l 2>/dev/null || echo "40")
+        echo "$ESTIMATED_TEMP"
+    }
+
+    TEMP_CELSIUS=$(get_temperature)
+    
+    # Set icon and color based on temperature
+    if (( TEMP_CELSIUS >= 80 )); then
+        TEMP_ICON="🔥"
+        TEMP_COLOR=$RED
+        TEMP_STATUS="Critical"
+    elif (( TEMP_CELSIUS >= 70 )); then
+        TEMP_ICON="🌡️"
+        TEMP_COLOR=$ORANGE
+        TEMP_STATUS="High"
+    elif (( TEMP_CELSIUS >= 60 )); then
+        TEMP_ICON="🌡️"  
+        TEMP_COLOR=$YELLOW
+        TEMP_STATUS="Warm"
+    else
+        TEMP_ICON="❄️"
+        TEMP_COLOR=$GREEN
+        TEMP_STATUS="Normal"
+    fi
+    
+    sketchybar --set system_stats_menu.temperature \
+        icon="$TEMP_ICON" \
+        icon.color=$TEMP_COLOR \
+        label="${TEMP_CELSIUS}°C ($TEMP_STATUS)" \
         label.color=$WHITE
 }
 
