@@ -1,3 +1,14 @@
+#!/bin/bash
+# Quick fix script for shell configuration
+
+echo "🔧 Fixing shell configuration..."
+
+# Backup current configurations
+cp ~/.zshrc ~/.zshrc.backup.$(date +%Y%m%d_%H%M%S)
+echo "✅ Backed up ~/.zshrc"
+
+# Create a minimal working .zshrc that prioritizes ZIM
+cat > ~/.zshrc << 'EOF'
 # Start configuration added by Zim install {{{
 #
 # User configuration sourced by interactive shells
@@ -6,19 +17,9 @@
 # Skip system compinit to avoid double initialization with ZIM
 skip_global_compinit=1
 
-# Disable Fig completions completely to prevent conflicts
-export FIG_DISABLE=1
-export FIG_NEW_SESSION=false
-
-# Early environment setup to prevent completion conflicts  
+# Early environment setup to prevent completion conflicts
 export DISABLE_COMPFIX=true
 export ZSH_DISABLE_COMPFIX=true
-
-# Clear any existing completion state to allow ZIM a clean start
-if (( ${+_comps} )); then
-    unset _comps
-    unfunction compdef compinit 2>/dev/null || true
-fi
 
 # -----------------
 # Zsh configuration
@@ -150,10 +151,8 @@ export ZIM_HOME="${ZIM_HOME:-${HOME}/.zim}"
 export OPENAI_API_KEY="$(security find-generic-password -s OPENAI_API_KEY -w 2>/dev/null || true)"
 
 # Load zsh-defer if available
-ZSH_DEFER_AVAILABLE=false
 if [[ -f ~/zsh-defer/zsh-defer.plugin.zsh ]]; then
     source ~/zsh-defer/zsh-defer.plugin.zsh
-    ZSH_DEFER_AVAILABLE=true
 fi
 
 # Load custom modules AFTER ZIM initialization
@@ -175,26 +174,34 @@ fi
 
 # Environment variables
 export PATH="$HOME/.pyenv/bin:$HOME/Library/Application Support/reflex/bun/bin:/opt/homebrew/opt/llvm/bin:$HOME/.npm-global/bin:./.venv/bin:$PATH"
+export RX_NODE_PATH=$(which node)
 
-# Load Starship immediately for consistent prompt experience
-eval "$(starship init zsh)" 2>/dev/null
-
-# Configure deferred loading for expensive operations only
-if [[ "$ZSH_DEFER_AVAILABLE" == "true" ]]; then
-    # Defer only the slow operations to background
-    zsh-defer 'export RX_NODE_PATH=$(which node)'
+# Defer heavy tools for better startup performance (if zsh-defer is available)
+if command -v zsh-defer >/dev/null 2>&1; then
+    zsh-defer 'sleep 0.5 && eval "$(pyenv init --path)" 2>/dev/null &!'
+    zsh-defer 'sleep 0.5 && eval "$(pyenv init -)" 2>/dev/null &!'
     zsh-defer 'eval "$(zoxide init --cmd cd zsh)" 2>/dev/null'
-    zsh-defer 'sleep 1.0 && eval "$(pyenv init --path)" 2>/dev/null &!'
-    zsh-defer 'sleep 1.5 && eval "$(pyenv init -)" 2>/dev/null &!'
     zsh-defer '[ -f ~/.env ] && set -a && source ~/.env && set +a'
-else
-    # Fallback - load everything immediately
-    export RX_NODE_PATH=$(which node)
-    eval "$(zoxide init --cmd cd zsh)" 2>/dev/null
-    eval "$(pyenv init --path)" 2>/dev/null
-    eval "$(pyenv init -)" 2>/dev/null
+    
+    # Prompt: Starship (only for non-Warp terminals, deferred to avoid conflicts)
+    if [[ "$TERM_PROGRAM" != "WarpTerminal" ]]; then
+        zsh-defer 'eval "$(starship init zsh)" 2>/dev/null'
+    fi
 fi
 
 # Completion cache config
 zstyle ':completion::complete:*' use-cache on
 zstyle ':completion::complete:*' cache-path ~/.zsh/cache
+EOF
+
+echo "✅ Created clean ~/.zshrc"
+
+# Fix the .config/.zshrc to not conflict
+if [[ -f ~/.config/.zshrc ]]; then
+    mv ~/.config/.zshrc ~/.config/.zshrc.disabled
+    echo "✅ Disabled conflicting ~/.config/.zshrc"
+fi
+
+echo "🎉 Shell configuration fixed!"
+echo "📝 Run 'source ~/.zshrc' or restart your terminal to apply changes"
+echo "💡 Your old config was backed up to ~/.zshrc.backup.*"

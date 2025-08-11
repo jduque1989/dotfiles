@@ -1,0 +1,27 @@
+# ZIM Framework Configuration
+#
+# This is not sourced during shell startup, and it's only used to configure the
+# zimfw plugin manager.
+#
+
+# Core modules
+zmodule environment
+zmodule git
+zmodule input
+zmodule utility
+
+# Additional completion definitions for Zsh.
+zmodule zsh-users/zsh-completions --fpath src
+
+# Syntax highlighting (fast-syntax-highlighting instead of zsh-syntax-highlighting for better performance)
+zmodule zdharma-continuum/fast-syntax-highlighting
+
+# Autosuggestions (must come after syntax highlighting)
+zmodule zsh-users/zsh-autosuggestions
+
+# History search
+zmodule zsh-users/zsh-history-substring-search
+
+# Enables and configures smart and extensive tab completion.
+# CRITICAL: completion must be sourced LAST after all modules that add completion definitions.
+zmodule completion

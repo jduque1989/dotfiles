@@ -1,75 +1,382 @@
-# Get editor completions based on the config schema
+# ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+# ┃                                 🚀 Starship Prompt Configuration                                  ┃
+# ┃                                      Cool Developer Setup                                         ┃
+# ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
 "$schema" = 'https://starship.rs/config-schema.json'
 
-# Inserts a blank line between shell prompts
-add_newline = false
+# ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+# │                                        GENERAL SETTINGS                                         │
+# └─────────────────────────────────────────────────────────────────────────────────────────────────┘
 
-# Replace the '❯' symbol in the prompt with '➜'
-[character] # The name of the module we are configuring is 'character'
-success_symbol = '[➜](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
-error_symbol = '[✗](bold red) '
+format = """
+[╭─ ](bold bright-blue)$os$hostname$username\
+[](bold bright-blue)$directory\
+[](bold bright-blue)$git_branch$git_status$git_state\
+[](bold bright-blue)$docker_context$nodejs$python$rust$golang$java\
+[](bold bright-blue)$cmd_duration$jobs$memory_usage$battery$shell
+[╰─ ](bold bright-blue)$character"""
 
-# Disable the package module, hiding it from the prompt completely
-[package]
-disabled = false
+right_format = """$time"""
 
-# ~/.config/starship.toml
+add_newline = true
 
-[battery]
-full_symbol = '🔋 '
-charging_symbol = '⚡️ '
-discharging_symbol = '💀 '
+# ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+# │                                      CHARACTER & SYMBOLS                                       │
+# └─────────────────────────────────────────────────────────────────────────────────────────────────┘
 
-[[battery.display]]
-threshold = 30
-style = 'bold red'
+[character]
+success_symbol = '[❯](bold green)'
+error_symbol = '[❌](bold red)'
+vimcmd_symbol = '[](bold green)'
+vimcmd_replace_one_symbol = '[](bold purple)'
+vimcmd_replace_symbol = '[](bold purple)'
+vimcmd_visual_symbol = '[](bold yellow)'
 
-
-# ~/.config/starship.toml
-
-# Shows the current username
-[env_var.USER]
-format = '[$env_value](bold white) '
-variable = "USER"
-disabled = true
-
-
-# Shows the hostname
-[hostname]
-ssh_only = false
-format = "[$hostname](bold yellow) "
-disabled = true
-
-# Shows current directory
-[directory]
-truncation_length = 8
-truncation_symbol = "…/"
-home_symbol = " ~"
-read_only_style = "197"
-read_only = "  "
-format = "at [$path]($style)[$read_only]($read_only_style) "
-
-[localip]
-ssh_only = true
-format = '@[$localipv4](bold red) '
-disabled = false
-
-
-[conda]
-ignore_base = true
-symbol = "🅒 "
-
-# disabled = false
-# General
-#[general]
-#command_timeout = 10
+# ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+# │                                         SYSTEM INFO                                            │
+# └─────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 [os]
-format = "on [$symbol]($style)"
-style = "bold white"
+format = '[$symbol ](bold white)'
 disabled = false
 
 [os.symbols]
-Macos = " "
-Linux = " "
-Windows = " "
+Macos = "⌘"
+Linux = ""
+Windows = ""
+Ubuntu = ""
+Debian = ""
+CentOS = ""
+Fedora = ""
+Arch = ""
+
+[username]
+style_user = 'cyan'  # Removed bold for subtlety
+style_root = 'bold red'  # Keep bold for root (important!)
+format = '[$user]($style)'
+disabled = false
+show_always = false
+
+[hostname]
+ssh_only = true
+format = '@[$hostname](yellow)'  # Removed bold, simpler
+disabled = false
+
+[time]
+disabled = false
+format = '[ $time](bold bright-black)'
+time_format = "%H:%M:%S"
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+# │                                      DIRECTORY & PATH                                          │
+# └─────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+[directory]
+truncation_length = 4
+truncation_symbol = "…/"
+home_symbol = " ~"
+read_only_style = "bold red"
+read_only = " 󰌾"
+format = "in [$path]($style)[$read_only]($read_only_style) "
+style = "bold cyan"
+repo_root_style = "bold blue"
+repo_root_format = "[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) "
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+"Developer" = "󰲋 "
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+# │                                          GIT STATUS                                            │
+# └─────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+[git_branch]
+symbol = " "
+format = "on [$symbol$branch]($style) "
+style = "bold purple"
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "bold red"
+conflicted = "⚠️"          # Warning triangle (was ⚡)
+up_to_date = ""
+untracked = "?"           # Simple question mark (was 🤷)
+ahead = "↑${count}"       # Up arrow (was ⇡)
+diverged = "↕↑${ahead_count}↓${behind_count}"  # Standard arrows (was ⇕⇡⇣)
+behind = "↓${count}"      # Down arrow (was ⇣)
+stashed = "📋"            # Clipboard (was 📦)
+modified = "●"            # Bullet point (was 📝)
+staged = '[++\($count\)](green)'  # Keep as is - already professional
+renamed = "➜"             # Right arrow (was 👅)
+deleted = "✗"             # X mark (was 🗑)
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+# │                                     LANGUAGE VERSIONS                                          │
+# └─────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+[nodejs]
+format = "via [ $version](bold green) "
+detect_files = ["package.json", ".node-version"]
+detect_folders = ["node_modules"]
+
+[python]
+symbol = " "
+format = 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+style = "bold yellow"
+pyenv_version_name = false
+python_binary = ["./venv/bin/python", "python", "python3", "python2"]
+
+[rust]
+symbol = " "
+format = "via [$symbol($version )]($style)"
+style = "bold red"
+
+[golang]
+symbol = " "
+format = "via [$symbol($version )]($style)"
+style = "bold cyan"
+
+[java]
+symbol = " "
+format = "via [$symbol($version )]($style)"
+style = "bold red"
+
+[php]
+symbol = " "
+format = "via [$symbol($version )]($style)"
+
+[swift]
+symbol = "ﯣ "
+format = "via [$symbol($version )]($style)"
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+# │                                      DEVELOPMENT TOOLS                                         │
+# └─────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+[docker_context]
+symbol = " "
+format = "via [$symbol$context]($style) "
+style = "blue bold"
+only_with_files = true
+detect_files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile"]
+detect_folders = []
+disabled = false
+
+[kubernetes]
+format = 'on [⛵ ($user on )($cluster in )$context \($namespace\)](dimmed green) '
+disabled = false
+
+[aws]
+symbol = "  "
+format = 'on [$symbol($profile )(\($region\) )(\[$duration\] )]($style)'
+style = "bold blue"
+disabled = false
+
+[gcloud]
+format = 'on [$symbol$account(@$domain)(\($region\))]($style) '
+style = "bold blue"
+symbol = "☁️  "
+disabled = false
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+# │                                       SYSTEM STATUS                                            │
+# └─────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "🔌"
+discharging_symbol = "⚡"
+unknown_symbol = "❓"
+empty_symbol = "🪫"
+
+[[battery.display]]
+threshold = 20
+style = "bold red"
+discharging_symbol = "💀"
+
+[[battery.display]]
+threshold = 50
+style = "bold yellow"
+
+[[battery.display]]
+threshold = 80
+style = "bold green"
+
+[memory_usage]
+disabled = false
+threshold = 90
+symbol = "🐏"
+style = "bold dimmed green"
+format = "[$symbol${ram}]($style) "
+
+[cmd_duration]
+min_time = 2_000
+format = "took [$duration](bold yellow) "
+show_milliseconds = false
+
+[jobs]
+symbol = "+"
+style = "bold red"
+number_threshold = 1
+format = "[$symbol$number]($style) "
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+# │                                     PACKAGE MANAGERS                                           │
+# └─────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+[package]
+format = "is [🎁 $version](208 bold) "
+disabled = false
+
+[conda]
+format = "via [🅒 $environment](dimmed green) "
+ignore_base = true
+
+[spack]
+format = "via [🅢 $environment](dimmed blue) "
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+# │                                         DISABLED                                               │
+# └─────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+[cmake]
+disabled = true
+
+[cobol]
+disabled = true
+
+[crystal]
+disabled = true
+
+[dart]
+disabled = true
+
+[deno]
+disabled = true
+
+[dotnet]
+disabled = true
+
+[elixir]
+disabled = true
+
+[elm]
+disabled = true
+
+[erlang]
+disabled = true
+
+[fennel]
+disabled = true
+
+[haskell]
+disabled = true
+
+[haxe]
+disabled = true
+
+[helm]
+disabled = true
+
+[julia]
+disabled = true
+
+[kotlin]
+disabled = true
+
+[lua]
+disabled = true
+
+[nim]
+disabled = true
+
+[nix_shell]
+disabled = true
+
+[ocaml]
+disabled = true
+
+[perl]
+disabled = true
+
+[pulumi]
+disabled = true
+
+[purescript]
+disabled = true
+
+[red]
+disabled = true
+
+[rlang]
+disabled = true
+
+[ruby]
+disabled = true
+
+[scala]
+disabled = true
+
+[terraform]
+disabled = true
+
+[vlang]
+disabled = true
+
+[vagrant]
+disabled = true
+
+[zig]
+disabled = true
+
+# ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+# │                                      ADDITIONAL MODULES                                         │
+# └─────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+[shell]
+disabled = false
+format = "[$indicator]($style) "
+bash_indicator = "🐚bash"
+fish_indicator = "🐟fish"
+zsh_indicator = "⚡zsh"
+powershell_indicator = "💙pwsh"
+ion_indicator = "🔥ion"
+elvish_indicator = "🧝elvish"
+tcsh_indicator = "🐚tcsh"
+xonsh_indicator = "🐚xonsh"
+cmd_indicator = "🏁cmd"
+nu_indicator = "💎nu"
+unknown_indicator = "❓"
+style = "cyan bold"
+
+[env_var.EDITOR]
+variable = "EDITOR"
+default = "unknown"
+format = "[$env_value]($style) "
+style = "dimmed green"
+disabled = true
+
+[sudo]
+disabled = false
+format = "[as $symbol]($style)"
+symbol = "🧙"
+style = "bold blue"
+
+[status]
+disabled = false
+format = "[$symbol$status]($style) "
+symbol = "❌ "
+success_symbol = ""
+not_executable_symbol = "🚫 "
+not_found_symbol = "🔍 "
+sigint_symbol = "🧱 "
+signal_symbol = "⚡ "
+style = "bold red"
+map_symbol = true
