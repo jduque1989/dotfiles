@@ -4,6 +4,39 @@
 # ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
 # ─────────────────────────────────────────────────────────────────────────────────────────────────
+# NAVIGATION OPTIMIZATION
+# ─────────────────────────────────────────────────────────────────────────────────────────────────
+
+# Replace cd with zoxide for smart directory jumping
+if command -v zoxide >/dev/null 2>&1; then
+    # Create optimized cd function that uses zoxide
+    cd() {
+        if [[ $# -eq 0 ]]; then
+            # No arguments: go to home directory
+            builtin cd
+        elif [[ -d "$1" ]]; then
+            # Argument is an existing directory: use normal cd and add to zoxide
+            builtin cd "$1" && zoxide add "$(pwd)"
+        else
+            # Argument might be a partial match: use zoxide to find and jump
+            local result=$(zoxide query "$@" 2>/dev/null)
+            if [[ -n "$result" ]]; then
+                builtin cd "$result"
+            else
+                # Fallback to normal cd if zoxide can't find anything
+                builtin cd "$@"
+            fi
+        fi
+    }
+    
+    # Also create z alias for those who prefer it
+    alias z='zoxide query -i'  # Interactive zoxide
+else
+    # Fallback if zoxide not available
+    echo "Warning: zoxide not found, using standard cd"
+fi
+
+# ─────────────────────────────────────────────────────────────────────────────────────────────────
 # MODERN CLI REPLACEMENTS
 # ─────────────────────────────────────────────────────────────────────────────────────────────────
 
