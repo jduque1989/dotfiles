@@ -183,14 +183,12 @@ eval "$(starship init zsh)" 2>/dev/null
 if [[ "$ZSH_DEFER_AVAILABLE" == "true" ]]; then
     # Defer only the slow operations to background
     zsh-defer 'export RX_NODE_PATH=$(which node)'
-    zsh-defer 'eval "$(zoxide init --cmd cd zsh)" 2>/dev/null'
     zsh-defer 'sleep 1.0 && eval "$(pyenv init --path)" 2>/dev/null &!'
     zsh-defer 'sleep 1.5 && eval "$(pyenv init -)" 2>/dev/null &!'
     zsh-defer '[ -f ~/.env ] && set -a && source ~/.env && set +a'
 else
     # Fallback - load everything immediately
     export RX_NODE_PATH=$(which node)
-    eval "$(zoxide init --cmd cd zsh)" 2>/dev/null
     eval "$(pyenv init --path)" 2>/dev/null
     eval "$(pyenv init -)" 2>/dev/null
 fi
