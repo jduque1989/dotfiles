@@ -2,3 +2,4 @@
 # Ignore environment files
 .DS_Store
 .env
+.config/rclone/rclone.conf
