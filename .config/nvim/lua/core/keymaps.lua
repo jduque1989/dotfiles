@@ -76,7 +76,7 @@ vim.keymap.set({ 'n', 'x' }, '<leader>fs', function()
 end, { desc = ' rip substitute' })
 
 -- Avante
-vim.keymap.set('n', '<leader>aa', '<cmd>AvanteAsk<CR>', { desc = 'Avante Ask' })
+vim.keymap.set('n', '<leader>av', '<cmd>AvanteAsk<CR>', { desc = 'Avante Ask' })
 
 -- ToggleTerm
 vim.keymap.set('n', '<leader>tt', '<cmd>ToggleTerm<CR>', { desc = 'Toggle terminal' })

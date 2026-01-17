@@ -18,13 +18,10 @@
     "pernielsentikaer",
     "rasitayaz",
     "popalay",
-<<<<<<< HEAD
     "litomore",
     "ChanningKuo",
-    "likid"
-=======
-    "litomore"
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
+    "likid",
+    "xmok"
   ],
   "license": "MIT",
   "commands": [
@@ -48,7 +45,6 @@
       "subtitle": "Google Translate",
       "description": "Quickly translate to multiple languages",
       "mode": "view"
-<<<<<<< HEAD
     },
     {
       "name": "instant-translate-copy",
@@ -70,8 +66,6 @@
       "subtitle": "Google Translate",
       "description": "Instantly translate selected text with HUD display",
       "mode": "no-view"
-=======
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
     }
   ],
   "preferences": [
@@ -84,7 +78,6 @@
       "default": "auto",
       "data": [
         {
-<<<<<<< HEAD
           "title": "Auto-Detect",
           "value": "auto"
         },
@@ -117,20 +110,6 @@
           "value": "alz"
         },
         {
-=======
-          "title": "🌐 Auto-detect",
-          "value": "auto"
-        },
-        {
-          "title": "🇿🇦 Afrikaans",
-          "value": "af"
-        },
-        {
-          "title": "🇦🇱 Albanian",
-          "value": "sq"
-        },
-        {
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Amharic",
           "value": "am"
         },
@@ -139,7 +118,6 @@
           "value": "ar"
         },
         {
-<<<<<<< HEAD
           "title": "Armenian",
           "value": "hy"
         },
@@ -184,21 +162,10 @@
           "value": "ba"
         },
         {
-=======
-          "title": "🇦🇲 Armenian",
-          "value": "hy"
-        },
-        {
-          "title": "🇦🇿 Azerbaijani",
-          "value": "az"
-        },
-        {
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Basque",
           "value": "eu"
         },
         {
-<<<<<<< HEAD
           "title": "Batak Karo",
           "value": "btx"
         },
@@ -219,17 +186,10 @@
           "value": "bem"
         },
         {
-=======
-          "title": "🇧🇾 Belarusian",
-          "value": "be"
-        },
-        {
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Bengali",
           "value": "bn"
         },
         {
-<<<<<<< HEAD
           "title": "Betawi",
           "value": "bew"
         },
@@ -262,16 +222,6 @@
           "value": "yue"
         },
         {
-=======
-          "title": "🇧🇦 Bosnian",
-          "value": "bs"
-        },
-        {
-          "title": "🇧🇬 Bulgarian",
-          "value": "bg"
-        },
-        {
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Catalan",
           "value": "ca"
         },
@@ -280,7 +230,6 @@
           "value": "ceb"
         },
         {
-<<<<<<< HEAD
           "title": "Chamorro",
           "value": "ch"
         },
@@ -293,8 +242,6 @@
           "value": "ny"
         },
         {
-=======
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Chinese (Simplified)",
           "value": "zh-CN"
         },
@@ -303,7 +250,6 @@
           "value": "zh-TW"
         },
         {
-<<<<<<< HEAD
           "title": "Chuukese",
           "value": "chk"
         },
@@ -312,13 +258,10 @@
           "value": "cv"
         },
         {
-=======
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Corsican",
           "value": "co"
         },
         {
-<<<<<<< HEAD
           "title": "Crimean Tatar (Cyrillic)",
           "value": "crh"
         },
@@ -372,25 +315,6 @@
         },
         {
           "title": "English",
-=======
-          "title": "🇭🇷 Croatian",
-          "value": "hr"
-        },
-        {
-          "title": "🇨🇿 Czech",
-          "value": "cs"
-        },
-        {
-          "title": "🇩🇰 Danish",
-          "value": "da"
-        },
-        {
-          "title": "🇳🇱 Dutch",
-          "value": "nl"
-        },
-        {
-          "title": "🇬🇧 English",
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "value": "en"
         },
         {
@@ -398,7 +322,6 @@
           "value": "eo"
         },
         {
-<<<<<<< HEAD
           "title": "Estonian",
           "value": "et"
         },
@@ -435,25 +358,10 @@
           "value": "fr-CA"
         },
         {
-=======
-          "title": "🇪🇪 Estonian",
-          "value": "et"
-        },
-        {
-          "title": "🇫🇮 Finnish",
-          "value": "fi"
-        },
-        {
-          "title": "🇫🇷 French",
-          "value": "fr"
-        },
-        {
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Frisian",
           "value": "fy"
         },
         {
-<<<<<<< HEAD
           "title": "Friulian",
           "value": "fur"
         },
@@ -466,13 +374,10 @@
           "value": "gaa"
         },
         {
-=======
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Galician",
           "value": "gl"
         },
         {
-<<<<<<< HEAD
           "title": "Georgian",
           "value": "ka"
         },
@@ -489,25 +394,10 @@
           "value": "gn"
         },
         {
-=======
-          "title": "🇬🇪 Georgian",
-          "value": "ka"
-        },
-        {
-          "title": "🇩🇪 German",
-          "value": "de"
-        },
-        {
-          "title": "🇬🇷 Greek",
-          "value": "el"
-        },
-        {
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Gujarati",
           "value": "gu"
         },
         {
-<<<<<<< HEAD
           "title": "Haitian Creole",
           "value": "ht"
         },
@@ -516,17 +406,10 @@
           "value": "cnh"
         },
         {
-=======
-          "title": "🇭🇹 Haitian Creole",
-          "value": "ht"
-        },
-        {
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Hausa",
           "value": "ha"
         },
         {
-<<<<<<< HEAD
           "title": "Hawaiian",
           "value": "haw"
         },
@@ -540,17 +423,6 @@
         },
         {
           "title": "Hindi",
-=======
-          "title": "🌺 Hawaiian",
-          "value": "haw"
-        },
-        {
-          "title": "🇮🇱 Hebrew",
-          "value": "iw"
-        },
-        {
-          "title": "🇮🇳 Hindi",
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "value": "hi"
         },
         {
@@ -558,7 +430,6 @@
           "value": "hmn"
         },
         {
-<<<<<<< HEAD
           "title": "Hungarian",
           "value": "hu"
         },
@@ -572,13 +443,6 @@
         },
         {
           "title": "Icelandic",
-=======
-          "title": "🇭🇺 Hungarian",
-          "value": "hu"
-        },
-        {
-          "title": "🇮🇸 Icelandic",
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "value": "is"
         },
         {
@@ -586,7 +450,6 @@
           "value": "ig"
         },
         {
-<<<<<<< HEAD
           "title": "Ilocano",
           "value": "ilo"
         },
@@ -616,21 +479,6 @@
         },
         {
           "title": "Japanese",
-=======
-          "title": "🇮🇩 Indonesian",
-          "value": "id"
-        },
-        {
-          "title": "🇮🇪 Irish",
-          "value": "ga"
-        },
-        {
-          "title": "🇮🇹 Italian",
-          "value": "it"
-        },
-        {
-          "title": "🇯🇵 Japanese",
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "value": "ja"
         },
         {
@@ -638,7 +486,6 @@
           "value": "jv"
         },
         {
-<<<<<<< HEAD
           "title": "Jingpo",
           "value": "kac"
         },
@@ -647,13 +494,10 @@
           "value": "kl"
         },
         {
-=======
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Kannada",
           "value": "kn"
         },
         {
-<<<<<<< HEAD
           "title": "Kanuri",
           "value": "kr"
         },
@@ -670,17 +514,10 @@
           "value": "kha"
         },
         {
-=======
-          "title": "🇰🇿 Kazakh",
-          "value": "kk"
-        },
-        {
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Khmer",
           "value": "km"
         },
         {
-<<<<<<< HEAD
           "title": "Kiga",
           "value": "cgg"
         },
@@ -689,13 +526,10 @@
           "value": "kg"
         },
         {
-=======
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Kinyarwanda",
           "value": "rw"
         },
         {
-<<<<<<< HEAD
           "title": "Kituba",
           "value": "ktu"
         },
@@ -728,16 +562,6 @@
           "value": "ckb"
         },
         {
-=======
-          "title": "🇰🇷 Korean",
-          "value": "ko"
-        },
-        {
-          "title": "Kurdish",
-          "value": "ku"
-        },
-        {
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Kyrgyz",
           "value": "ky"
         },
@@ -746,7 +570,6 @@
           "value": "lo"
         },
         {
-<<<<<<< HEAD
           "title": "Latgalian",
           "value": "ltg"
         },
@@ -807,29 +630,10 @@
           "value": "mak"
         },
         {
-=======
-          "title": "🇱🇻 Latvian",
-          "value": "lv"
-        },
-        {
-          "title": "🇱🇹 Lithuanian",
-          "value": "lt"
-        },
-        {
-          "title": "🇱🇺 Luxembourgish",
-          "value": "lb"
-        },
-        {
-          "title": "🇲🇰 Macedonian",
-          "value": "mk"
-        },
-        {
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Malagasy",
           "value": "mg"
         },
         {
-<<<<<<< HEAD
           "title": "Malay",
           "value": "ms"
         },
@@ -838,17 +642,10 @@
           "value": "ms-Arab"
         },
         {
-=======
-          "title": "🇲🇾 Malay",
-          "value": "ms"
-        },
-        {
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Malayalam",
           "value": "ml"
         },
         {
-<<<<<<< HEAD
           "title": "Maltese",
           "value": "mt"
         },
@@ -862,13 +659,6 @@
         },
         {
           "title": "Maori",
-=======
-          "title": "🇲🇹 Maltese",
-          "value": "mt"
-        },
-        {
-          "title": "🇳🇿 Maori",
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "value": "mi"
         },
         {
@@ -876,7 +666,6 @@
           "value": "mr"
         },
         {
-<<<<<<< HEAD
           "title": "Marshallese",
           "value": "mh"
         },
@@ -947,33 +736,12 @@
         {
           "title": "Occitan",
           "value": "oc"
-=======
-          "title": "🇲🇳 Mongolian",
-          "value": "mn"
-        },
-        {
-          "title": "🇲🇲 Myanmar (Burmese)",
-          "value": "my"
-        },
-        {
-          "title": "🇳🇵 Nepali",
-          "value": "ne"
-        },
-        {
-          "title": "🇳🇴 Norwegian",
-          "value": "no"
-        },
-        {
-          "title": "Nyanja (Chichewa)",
-          "value": "ny"
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
         },
         {
           "title": "Odia (Oriya)",
           "value": "or"
         },
         {
-<<<<<<< HEAD
           "title": "Oromo",
           "value": "om"
         },
@@ -990,13 +758,10 @@
           "value": "pap"
         },
         {
-=======
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Pashto",
           "value": "ps"
         },
         {
-<<<<<<< HEAD
           "title": "Persian",
           "value": "fa"
         },
@@ -1049,37 +814,10 @@
           "value": "se"
         },
         {
-=======
-          "title": "🇮🇷 Persian",
-          "value": "fa"
-        },
-        {
-          "title": "🇵🇱 Polish",
-          "value": "pl"
-        },
-        {
-          "title": "🇵🇹 Portuguese",
-          "value": "pt"
-        },
-        {
-          "title": "🇮🇳 Punjabi",
-          "value": "pa"
-        },
-        {
-          "title": "🇷🇴 Romanian",
-          "value": "ro"
-        },
-        {
-          "title": "🇷🇺 Russian",
-          "value": "ru"
-        },
-        {
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Samoan",
           "value": "sm"
         },
         {
-<<<<<<< HEAD
           "title": "Sango",
           "value": "sg"
         },
@@ -1105,13 +843,6 @@
         },
         {
           "title": "Serbian",
-=======
-          "title": "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scots Gaelic",
-          "value": "gd"
-        },
-        {
-          "title": "🇷🇸 Serbian",
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "value": "sr"
         },
         {
@@ -1119,7 +850,6 @@
           "value": "st"
         },
         {
-<<<<<<< HEAD
           "title": "Seychellois Creole",
           "value": "crs"
         },
@@ -1128,13 +858,10 @@
           "value": "shn"
         },
         {
-=======
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Shona",
           "value": "sn"
         },
         {
-<<<<<<< HEAD
           "title": "Sicilian",
           "value": "scn"
         },
@@ -1143,13 +870,10 @@
           "value": "szl"
         },
         {
-=======
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Sindhi",
           "value": "sd"
         },
         {
-<<<<<<< HEAD
           "title": "Sinhala",
           "value": "si"
         },
@@ -1178,37 +902,10 @@
           "value": "sus"
         },
         {
-=======
-          "title": "Sinhala (Sinhalese)",
-          "value": "si"
-        },
-        {
-          "title": "🇸🇰 Slovak",
-          "value": "sk"
-        },
-        {
-          "title": "🇸🇮 Slovenian",
-          "value": "sl"
-        },
-        {
-          "title": "🇸🇴 Somali",
-          "value": "so"
-        },
-        {
-          "title": "🇪🇸 Spanish",
-          "value": "es"
-        },
-        {
-          "title": "🇸🇩 Sundanese",
-          "value": "su"
-        },
-        {
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Swahili",
           "value": "sw"
         },
         {
-<<<<<<< HEAD
           "title": "Swati",
           "value": "ss"
         },
@@ -1219,21 +916,12 @@
         {
           "title": "Tahitian",
           "value": "ty"
-=======
-          "title": "🇸🇪 Swedish",
-          "value": "sv"
-        },
-        {
-          "title": "🇵🇭 Tagalog (Filipino)",
-          "value": "tl"
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
         },
         {
           "title": "Tajik",
           "value": "tg"
         },
         {
-<<<<<<< HEAD
           "title": "Tamazight",
           "value": "ber-Latn"
         },
@@ -1242,8 +930,6 @@
           "value": "ber"
         },
         {
-=======
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Tamil",
           "value": "ta"
         },
@@ -1256,18 +942,14 @@
           "value": "te"
         },
         {
-<<<<<<< HEAD
           "title": "Tetum",
           "value": "tet"
         },
         {
-=======
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Thai",
           "value": "th"
         },
         {
-<<<<<<< HEAD
           "title": "Tibetan",
           "value": "bo"
         },
@@ -1329,17 +1011,6 @@
         },
         {
           "title": "Ukrainian",
-=======
-          "title": "🇹🇷 Turkish",
-          "value": "tr"
-        },
-        {
-          "title": "🇹🇲 Turkmen",
-          "value": "tk"
-        },
-        {
-          "title": "🇺🇦 Ukrainian",
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "value": "uk"
         },
         {
@@ -1355,7 +1026,6 @@
           "value": "uz"
         },
         {
-<<<<<<< HEAD
           "title": "Venda",
           "value": "ve"
         },
@@ -1380,29 +1050,15 @@
           "value": "wo"
         },
         {
-=======
-          "title": "🇻🇳 Vietnamese",
-          "value": "vi"
-        },
-        {
-          "title": "🏴󠁧󠁢󠁷󠁬󠁳󠁿 Welsh",
-          "value": "cy"
-        },
-        {
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Xhosa",
           "value": "xh"
         },
         {
-<<<<<<< HEAD
           "title": "Yakut",
           "value": "sah"
         },
         {
           "title": "Yiddish",
-=======
-          "title": "🇮🇱 Yiddish",
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "value": "yi"
         },
         {
@@ -1410,7 +1066,6 @@
           "value": "yo"
         },
         {
-<<<<<<< HEAD
           "title": "Yucatec Maya",
           "value": "yua"
         },
@@ -1419,8 +1074,6 @@
           "value": "zap"
         },
         {
-=======
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Zulu",
           "value": "zu"
         }
@@ -1432,7 +1085,6 @@
       "description": "Preferred language to translate to",
       "required": true,
       "type": "dropdown",
-<<<<<<< HEAD
       "default": "en",
       "data": [
         {
@@ -1464,19 +1116,6 @@
           "value": "alz"
         },
         {
-=======
-      "default": "de",
-      "data": [
-        {
-          "title": "🇿🇦 Afrikaans",
-          "value": "af"
-        },
-        {
-          "title": "🇦🇱 Albanian",
-          "value": "sq"
-        },
-        {
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Amharic",
           "value": "am"
         },
@@ -1485,7 +1124,6 @@
           "value": "ar"
         },
         {
-<<<<<<< HEAD
           "title": "Armenian",
           "value": "hy"
         },
@@ -1530,21 +1168,10 @@
           "value": "ba"
         },
         {
-=======
-          "title": "🇦🇲 Armenian",
-          "value": "hy"
-        },
-        {
-          "title": "🇦🇿 Azerbaijani",
-          "value": "az"
-        },
-        {
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Basque",
           "value": "eu"
         },
         {
-<<<<<<< HEAD
           "title": "Batak Karo",
           "value": "btx"
         },
@@ -1565,17 +1192,10 @@
           "value": "bem"
         },
         {
-=======
-          "title": "🇧🇾 Belarusian",
-          "value": "be"
-        },
-        {
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Bengali",
           "value": "bn"
         },
         {
-<<<<<<< HEAD
           "title": "Betawi",
           "value": "bew"
         },
@@ -1608,16 +1228,6 @@
           "value": "yue"
         },
         {
-=======
-          "title": "🇧🇦 Bosnian",
-          "value": "bs"
-        },
-        {
-          "title": "🇧🇬 Bulgarian",
-          "value": "bg"
-        },
-        {
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Catalan",
           "value": "ca"
         },
@@ -1626,7 +1236,6 @@
           "value": "ceb"
         },
         {
-<<<<<<< HEAD
           "title": "Chamorro",
           "value": "ch"
         },
@@ -1639,8 +1248,6 @@
           "value": "ny"
         },
         {
-=======
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Chinese (Simplified)",
           "value": "zh-CN"
         },
@@ -1649,7 +1256,6 @@
           "value": "zh-TW"
         },
         {
-<<<<<<< HEAD
           "title": "Chuukese",
           "value": "chk"
         },
@@ -1658,13 +1264,10 @@
           "value": "cv"
         },
         {
-=======
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Corsican",
           "value": "co"
         },
         {
-<<<<<<< HEAD
           "title": "Crimean Tatar (Cyrillic)",
           "value": "crh"
         },
@@ -1718,25 +1321,6 @@
         },
         {
           "title": "English",
-=======
-          "title": "🇭🇷 Croatian",
-          "value": "hr"
-        },
-        {
-          "title": "🇨🇿 Czech",
-          "value": "cs"
-        },
-        {
-          "title": "🇩🇰 Danish",
-          "value": "da"
-        },
-        {
-          "title": "🇳🇱 Dutch",
-          "value": "nl"
-        },
-        {
-          "title": "🇬🇧 English",
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "value": "en"
         },
         {
@@ -1744,7 +1328,6 @@
           "value": "eo"
         },
         {
-<<<<<<< HEAD
           "title": "Estonian",
           "value": "et"
         },
@@ -1781,25 +1364,10 @@
           "value": "fr-CA"
         },
         {
-=======
-          "title": "🇪🇪 Estonian",
-          "value": "et"
-        },
-        {
-          "title": "🇫🇮 Finnish",
-          "value": "fi"
-        },
-        {
-          "title": "🇫🇷 French",
-          "value": "fr"
-        },
-        {
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Frisian",
           "value": "fy"
         },
         {
-<<<<<<< HEAD
           "title": "Friulian",
           "value": "fur"
         },
@@ -1812,13 +1380,10 @@
           "value": "gaa"
         },
         {
-=======
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Galician",
           "value": "gl"
         },
         {
-<<<<<<< HEAD
           "title": "Georgian",
           "value": "ka"
         },
@@ -1835,25 +1400,10 @@
           "value": "gn"
         },
         {
-=======
-          "title": "🇬🇪 Georgian",
-          "value": "ka"
-        },
-        {
-          "title": "🇩🇪 German",
-          "value": "de"
-        },
-        {
-          "title": "🇬🇷 Greek",
-          "value": "el"
-        },
-        {
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Gujarati",
           "value": "gu"
         },
         {
-<<<<<<< HEAD
           "title": "Haitian Creole",
           "value": "ht"
         },
@@ -1862,17 +1412,10 @@
           "value": "cnh"
         },
         {
-=======
-          "title": "🇭🇹 Haitian Creole",
-          "value": "ht"
-        },
-        {
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Hausa",
           "value": "ha"
         },
         {
-<<<<<<< HEAD
           "title": "Hawaiian",
           "value": "haw"
         },
@@ -1886,17 +1429,6 @@
         },
         {
           "title": "Hindi",
-=======
-          "title": "🌺 Hawaiian",
-          "value": "haw"
-        },
-        {
-          "title": "🇮🇱 Hebrew",
-          "value": "iw"
-        },
-        {
-          "title": "🇮🇳 Hindi",
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "value": "hi"
         },
         {
@@ -1904,7 +1436,6 @@
           "value": "hmn"
         },
         {
-<<<<<<< HEAD
           "title": "Hungarian",
           "value": "hu"
         },
@@ -1918,13 +1449,6 @@
         },
         {
           "title": "Icelandic",
-=======
-          "title": "🇭🇺 Hungarian",
-          "value": "hu"
-        },
-        {
-          "title": "🇮🇸 Icelandic",
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "value": "is"
         },
         {
@@ -1932,7 +1456,6 @@
           "value": "ig"
         },
         {
-<<<<<<< HEAD
           "title": "Ilocano",
           "value": "ilo"
         },
@@ -1962,27 +1485,11 @@
         },
         {
           "title": "Japanese",
-=======
-          "title": "🇮🇩 Indonesian",
-          "value": "id"
-        },
-        {
-          "title": "🇮🇪 Irish",
-          "value": "ga"
-        },
-        {
-          "title": "🇮🇹 Italian",
-          "value": "it"
-        },
-        {
-          "title": "🇯🇵 Japanese",
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "value": "ja"
         },
         {
           "title": "Javanese",
-<<<<<<< HEAD
-          "value": "jw"
+          "value": "jv"
         },
         {
           "title": "Jingpo",
@@ -1991,16 +1498,12 @@
         {
           "title": "Kalaallisut",
           "value": "kl"
-=======
-          "value": "jv"
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
         },
         {
           "title": "Kannada",
           "value": "kn"
         },
         {
-<<<<<<< HEAD
           "title": "Kanuri",
           "value": "kr"
         },
@@ -2017,17 +1520,10 @@
           "value": "kha"
         },
         {
-=======
-          "title": "🇰🇿 Kazakh",
-          "value": "kk"
-        },
-        {
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Khmer",
           "value": "km"
         },
         {
-<<<<<<< HEAD
           "title": "Kiga",
           "value": "cgg"
         },
@@ -2036,13 +1532,10 @@
           "value": "kg"
         },
         {
-=======
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Kinyarwanda",
           "value": "rw"
         },
         {
-<<<<<<< HEAD
           "title": "Kituba",
           "value": "ktu"
         },
@@ -2075,16 +1568,6 @@
           "value": "ckb"
         },
         {
-=======
-          "title": "🇰🇷 Korean",
-          "value": "ko"
-        },
-        {
-          "title": "Kurdish",
-          "value": "ku"
-        },
-        {
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Kyrgyz",
           "value": "ky"
         },
@@ -2093,7 +1576,6 @@
           "value": "lo"
         },
         {
-<<<<<<< HEAD
           "title": "Latgalian",
           "value": "ltg"
         },
@@ -2154,33 +1636,10 @@
           "value": "mak"
         },
         {
-=======
-          "title": "🇱🇻 Latvian",
-          "value": "lv"
-        },
-        {
-          "title": "🏛 Latin",
-          "value": "la"
-        },
-        {
-          "title": "🇱🇹 Lithuanian",
-          "value": "lt"
-        },
-        {
-          "title": "🇱🇺 Luxembourgish",
-          "value": "lb"
-        },
-        {
-          "title": "🇲🇰 Macedonian",
-          "value": "mk"
-        },
-        {
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Malagasy",
           "value": "mg"
         },
         {
-<<<<<<< HEAD
           "title": "Malay",
           "value": "ms"
         },
@@ -2189,17 +1648,10 @@
           "value": "ms-Arab"
         },
         {
-=======
-          "title": "🇲🇾 Malay",
-          "value": "ms"
-        },
-        {
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Malayalam",
           "value": "ml"
         },
         {
-<<<<<<< HEAD
           "title": "Maltese",
           "value": "mt"
         },
@@ -2213,13 +1665,6 @@
         },
         {
           "title": "Maori",
-=======
-          "title": "🇲🇹 Maltese",
-          "value": "mt"
-        },
-        {
-          "title": "🇳🇿 Maori",
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "value": "mi"
         },
         {
@@ -2227,7 +1672,6 @@
           "value": "mr"
         },
         {
-<<<<<<< HEAD
           "title": "Marshallese",
           "value": "mh"
         },
@@ -2298,33 +1742,12 @@
         {
           "title": "Occitan",
           "value": "oc"
-=======
-          "title": "🇲🇳 Mongolian",
-          "value": "mn"
-        },
-        {
-          "title": "🇲🇲 Myanmar (Burmese)",
-          "value": "my"
-        },
-        {
-          "title": "🇳🇵 Nepali",
-          "value": "ne"
-        },
-        {
-          "title": "🇳🇴 Norwegian",
-          "value": "no"
-        },
-        {
-          "title": "Nyanja (Chichewa)",
-          "value": "ny"
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
         },
         {
           "title": "Odia (Oriya)",
           "value": "or"
         },
         {
-<<<<<<< HEAD
           "title": "Oromo",
           "value": "om"
         },
@@ -2341,13 +1764,10 @@
           "value": "pap"
         },
         {
-=======
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Pashto",
           "value": "ps"
         },
         {
-<<<<<<< HEAD
           "title": "Persian",
           "value": "fa"
         },
@@ -2400,37 +1820,10 @@
           "value": "se"
         },
         {
-=======
-          "title": "🇮🇷 Persian",
-          "value": "fa"
-        },
-        {
-          "title": "🇵🇱 Polish",
-          "value": "pl"
-        },
-        {
-          "title": "🇵🇹 Portuguese",
-          "value": "pt"
-        },
-        {
-          "title": "🇮🇳 Punjabi",
-          "value": "pa"
-        },
-        {
-          "title": "🇷🇴 Romanian",
-          "value": "ro"
-        },
-        {
-          "title": "🇷🇺 Russian",
-          "value": "ru"
-        },
-        {
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Samoan",
           "value": "sm"
         },
         {
-<<<<<<< HEAD
           "title": "Sango",
           "value": "sg"
         },
@@ -2456,13 +1849,6 @@
         },
         {
           "title": "Serbian",
-=======
-          "title": "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scots Gaelic",
-          "value": "gd"
-        },
-        {
-          "title": "🇷🇸 Serbian",
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "value": "sr"
         },
         {
@@ -2470,7 +1856,6 @@
           "value": "st"
         },
         {
-<<<<<<< HEAD
           "title": "Seychellois Creole",
           "value": "crs"
         },
@@ -2479,13 +1864,10 @@
           "value": "shn"
         },
         {
-=======
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Shona",
           "value": "sn"
         },
         {
-<<<<<<< HEAD
           "title": "Sicilian",
           "value": "scn"
         },
@@ -2494,13 +1876,10 @@
           "value": "szl"
         },
         {
-=======
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Sindhi",
           "value": "sd"
         },
         {
-<<<<<<< HEAD
           "title": "Sinhala",
           "value": "si"
         },
@@ -2529,37 +1908,10 @@
           "value": "sus"
         },
         {
-=======
-          "title": "Sinhala (Sinhalese)",
-          "value": "si"
-        },
-        {
-          "title": "🇸🇰 Slovak",
-          "value": "sk"
-        },
-        {
-          "title": "🇸🇮 Slovenian",
-          "value": "sl"
-        },
-        {
-          "title": "🇸🇴 Somali",
-          "value": "so"
-        },
-        {
-          "title": "🇪🇸 Spanish",
-          "value": "es"
-        },
-        {
-          "title": "🇸🇩 Sundanese",
-          "value": "su"
-        },
-        {
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Swahili",
           "value": "sw"
         },
         {
-<<<<<<< HEAD
           "title": "Swati",
           "value": "ss"
         },
@@ -2570,21 +1922,12 @@
         {
           "title": "Tahitian",
           "value": "ty"
-=======
-          "title": "🇸🇪 Swedish",
-          "value": "sv"
-        },
-        {
-          "title": "🇵🇭 Tagalog (Filipino)",
-          "value": "tl"
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
         },
         {
           "title": "Tajik",
           "value": "tg"
         },
         {
-<<<<<<< HEAD
           "title": "Tamazight",
           "value": "ber-Latn"
         },
@@ -2593,8 +1936,6 @@
           "value": "ber"
         },
         {
-=======
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Tamil",
           "value": "ta"
         },
@@ -2607,18 +1948,14 @@
           "value": "te"
         },
         {
-<<<<<<< HEAD
           "title": "Tetum",
           "value": "tet"
         },
         {
-=======
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Thai",
           "value": "th"
         },
         {
-<<<<<<< HEAD
           "title": "Tibetan",
           "value": "bo"
         },
@@ -2680,17 +2017,6 @@
         },
         {
           "title": "Ukrainian",
-=======
-          "title": "🇹🇷 Turkish",
-          "value": "tr"
-        },
-        {
-          "title": "🇹🇲 Turkmen",
-          "value": "tk"
-        },
-        {
-          "title": "🇺🇦 Ukrainian",
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "value": "uk"
         },
         {
@@ -2706,7 +2032,6 @@
           "value": "uz"
         },
         {
-<<<<<<< HEAD
           "title": "Venda",
           "value": "ve"
         },
@@ -2731,29 +2056,15 @@
           "value": "wo"
         },
         {
-=======
-          "title": "🇻🇳 Vietnamese",
-          "value": "vi"
-        },
-        {
-          "title": "🏴󠁧󠁢󠁷󠁬󠁳󠁿 Welsh",
-          "value": "cy"
-        },
-        {
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Xhosa",
           "value": "xh"
         },
         {
-<<<<<<< HEAD
           "title": "Yakut",
           "value": "sah"
         },
         {
           "title": "Yiddish",
-=======
-          "title": "🇮🇱 Yiddish",
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "value": "yi"
         },
         {
@@ -2761,7 +2072,6 @@
           "value": "yo"
         },
         {
-<<<<<<< HEAD
           "title": "Yucatec Maya",
           "value": "yua"
         },
@@ -2770,8 +2080,6 @@
           "value": "zap"
         },
         {
-=======
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
           "title": "Zulu",
           "value": "zu"
         }
@@ -2803,7 +2111,6 @@
           "value": "paste"
         }
       ]
-<<<<<<< HEAD
     },
     {
       "name": "proxy",
@@ -2814,44 +2121,30 @@
     }
   ],
   "dependencies": {
-    "undici": "^5.12.0",
-    "@raycast/api": "^1.47.3",
-    "@raycast/utils": "^1.4.16",
+    "@raycast/api": "^1.104.1",
+    "@raycast/utils": "^2.2.2",
     "google-tts-api": "^2.0.2",
-    "https-proxy-agent": "^7.0.6"
-=======
-    }
-  ],
-  "dependencies": {
-    "@iamtraction/google-translate": "^2.0.1",
-    "@raycast/api": "^1.47.3",
-    "@raycast/utils": "^1.4.16",
-    "google-tts-api": "^2.0.2"
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
+    "https-proxy-agent": "^7.0.6",
+    "undici": "^5.12.0"
   },
   "devDependencies": {
-    "@types/node": "~16.10.0",
-    "@types/react": "^17.0.28",
-    "@typescript-eslint/eslint-plugin": "^5.0.0",
-    "@typescript-eslint/parser": "^5.0.0",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "prettier": "^3.0.1",
-    "typescript": "^4.4.3"
+    "@raycast/eslint-config": "^2.0.4",
+    "@types/node": "22.13.10",
+    "@types/react": "19.0.10",
+    "eslint": "^9.22.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2"
   },
   "scripts": {
-    "build": "ray build -e dist",
+    "build": "ray build",
     "dev": "ray develop",
     "fix-lint": "ray lint --fix",
     "lint": "ray lint",
-    "publish": "ray publish"
-<<<<<<< HEAD
+    "prepublishOnly": "echo \"\\n\\nIt seems like you are trying to publish the Raycast extension to npm.\\n\\nIf you did intend to publish it to npm, remove the \\`prepublishOnly\\` script and rerun \\`npm publish\\` again.\\nIf you wanted to publish it to the Raycast Store instead, use \\`npm run publish\\` instead.\\n\\n\" && exit 1",
+    "publish": "npx @raycast/api@latest publish"
   },
   "platforms": [
     "macOS",
     "Windows"
   ]
-=======
-  }
->>>>>>> 600af2c (Organize dotfiles to get ready to be more maintanable)
 }

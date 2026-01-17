@@ -174,7 +174,7 @@ if [[ -f ~/.config/.zsh/modules/prompt.zsh ]]; then
 fi
 
 # Environment variables
-export PATH="$HOME/.pyenv/bin:$HOME/Library/Application Support/reflex/bun/bin:/opt/homebrew/opt/llvm/bin:$HOME/.npm-global/bin:./.venv/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.pyenv/bin:$HOME/Library/Application Support/reflex/bun/bin:/opt/homebrew/opt/llvm/bin:$HOME/.npm-global/bin:./.venv/bin:$PATH"
 
 # Load Starship immediately for consistent prompt experience
 eval "$(starship init zsh)" 2>/dev/null
