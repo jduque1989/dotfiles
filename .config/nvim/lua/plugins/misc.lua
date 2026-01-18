@@ -22,10 +22,6 @@ return {
     cmd = 'VimBeGood',
   },
   {
-    'ThePrimeagen/harpoon',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-  },
-  {
     'kevinhwang91/nvim-ufo',
     dependencies = { 'kevinhwang91/promise-async' },
     config = function()
@@ -125,16 +121,6 @@ return {
     'chrisgrieser/nvim-rip-substitute',
     cmd = 'RipSubstitute',
     opts = {},
-    keys = {
-      {
-        '<leader>fs',
-        function()
-          require('rip-substitute').sub()
-        end,
-        mode = { 'n', 'x' },
-        desc = ' rip substitute',
-      },
-    },
   },
   {
     'tweekmonster/startuptime.vim',

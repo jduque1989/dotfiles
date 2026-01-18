@@ -40,7 +40,7 @@ vim.keymap.set('n', '<leader>b', '<cmd>enew<CR>', opts)
 
 -- Window management
 vim.keymap.set('n', '<leader>v', '<C-w>v', opts)
-vim.keymap.set('n', '<leader>h', '<C-w>s', opts)
+vim.keymap.set('n', '<leader>-', '<C-w>s', opts)
 vim.keymap.set('n', '<leader>se', '<C-w>=', opts)
 vim.keymap.set('n', '<leader>xs', ':close<CR>', opts)
 

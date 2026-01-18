@@ -1,4 +1,4 @@
-local banners = require 'Plugins.banners' -- Replace with the actual path to your banners file
+local banners = require 'plugins.banners' -- Replace with the actual path to your banners file
 
 return {
   'nvimdev/dashboard-nvim',

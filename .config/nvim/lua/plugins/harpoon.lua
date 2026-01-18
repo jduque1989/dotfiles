@@ -1,55 +1,51 @@
 return {
   {
     'ThePrimeagen/harpoon',
-    branch = 'harpoon2', -- Ensure this branch exists and is stable
-    dependencies = { -- Add required dependencies explicitly
-      'nvim-lua/plenary.nvim', -- Required dependency for harpoon
-      'nvim-telescope/telescope.nvim', -- Optional: For Telescope integration
+    branch = 'harpoon2',
+    lazy = false,
+    dependencies = {
+      'nvim-lua/plenary.nvim',
     },
     config = function()
       local harpoon = require 'harpoon'
 
-      -- Initialize Harpoon
+      -- Initialize Harpoon 2
       harpoon.setup {}
 
-      -- Keymaps
+      -- Keymaps for Harpoon 2 API
       vim.keymap.set('n', '<leader>m', function()
-        require('harpoon.mark').add_file()
+        harpoon:list():add()
       end, { desc = 'Mark file with Harpoon' })
 
       vim.keymap.set('n', '<leader>ht', function()
-        require('harpoon.ui').toggle_quick_menu()
+        harpoon.ui:toggle_quick_menu(harpoon:list())
       end, { desc = 'Toggle Harpoon menu' })
 
-      -- Telescope Integration
-      local conf = require('telescope.config').values
+      -- Navigation to specific marks
+      vim.keymap.set('n', '<leader>1', function()
+        harpoon:list():select(1)
+      end, { desc = 'Harpoon file 1' })
 
-      local function toggle_telescope()
-        local harpoon_mark = require 'harpoon.mark'
-        local marks = harpoon_mark.get_marked_files() -- Fetch marked files
+      vim.keymap.set('n', '<leader>2', function()
+        harpoon:list():select(2)
+      end, { desc = 'Harpoon file 2' })
 
-        local file_paths = {}
-        for _, item in ipairs(marks) do
-          if item.filename then
-            table.insert(file_paths, item.filename) -- Use the correct field for file paths
-          else
-            table.insert(file_paths, item) -- Fallback if no `filename` field
-          end
-        end
+      vim.keymap.set('n', '<leader>3', function()
+        harpoon:list():select(3)
+      end, { desc = 'Harpoon file 3' })
 
-        require('telescope.pickers')
-          .new({}, {
-            prompt_title = 'Harpoon',
-            finder = require('telescope.finders').new_table {
-              results = file_paths,
-            },
-            previewer = conf.file_previewer {},
-            sorter = conf.generic_sorter {},
-          })
-          :find()
-      end
+      vim.keymap.set('n', '<leader>4', function()
+        harpoon:list():select(4)
+      end, { desc = 'Harpoon file 4' })
 
-      vim.keymap.set('n', '<leader>sp', toggle_telescope, { desc = 'Open Harpoon with Telescope' })
+      -- Navigate prev/next
+      vim.keymap.set('n', '<leader>hp', function()
+        harpoon:list():prev()
+      end, { desc = 'Harpoon prev file' })
+
+      vim.keymap.set('n', '<leader>hn', function()
+        harpoon:list():next()
+      end, { desc = 'Harpoon next file' })
     end,
   },
 }
