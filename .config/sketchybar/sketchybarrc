@@ -335,4 +335,9 @@ sketchybar --add item cpu right \
 ##### Force all scripts to run the first time #####
 sketchybar --update
 
+##### Initialize bar for Tahoe animations #####
+# Ensure bar starts at correct position (for menubar_helper.sh)
+sketchybar --bar y_offset=0
+
 echo "SketchyBar configuration loaded - No borders, seamless design"
+echo "macOS Tahoe menubar helper ready - run: menubar_helper.sh monitor"
